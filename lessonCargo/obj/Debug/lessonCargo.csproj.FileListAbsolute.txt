@@ -1,0 +1,10 @@
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\bin\Debug\lessonCargo.exe.config
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\bin\Debug\lessonCargo.exe
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\bin\Debug\lessonCargo.pdb
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\obj\Debug\lessonCargo.csproj.AssemblyReference.cache
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\obj\Debug\lessonCargo.Form1.resources
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\obj\Debug\lessonCargo.Properties.Resources.resources
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\obj\Debug\lessonCargo.csproj.GenerateResource.cache
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\obj\Debug\lessonCargo.csproj.CoreCompileInputs.cache
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\obj\Debug\lessonCargo.exe
+C:\Users\erhan\Desktop\okul\VisualStudio\lessonCargo\lessonCargo\obj\Debug\lessonCargo.pdb
