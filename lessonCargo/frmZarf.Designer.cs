@@ -38,10 +38,11 @@ namespace lessonCargo
             this.rbtnTeslimTel = new System.Windows.Forms.RadioButton();
             this.rbtnTeslimAdres = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblAdetSayisi = new System.Windows.Forms.Label();
+            this.lblAlimSube = new System.Windows.Forms.Label();
             this.lblAlimAdres = new System.Windows.Forms.Label();
             this.rbtnAlimSube = new System.Windows.Forms.RadioButton();
             this.rbtnAlimAdres = new System.Windows.Forms.RadioButton();
+            this.lblAdetSayisi = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chbMesajBilgi = new System.Windows.Forms.CheckBox();
             this.lblMesajBilgi = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@ namespace lessonCargo
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cmbAdetSayisi = new System.Windows.Forms.ComboBox();
-            this.lblAlimSube = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -122,7 +122,7 @@ namespace lessonCargo
             this.rbtnTeslimSube.Location = new System.Drawing.Point(129, 25);
             this.rbtnTeslimSube.Name = "rbtnTeslimSube";
             this.rbtnTeslimSube.Size = new System.Drawing.Size(122, 19);
-            this.rbtnTeslimSube.TabIndex = 1;
+            this.rbtnTeslimSube.TabIndex = 4;
             this.rbtnTeslimSube.Text = "Şubeye Çağrı Hiz.";
             this.rbtnTeslimSube.UseVisualStyleBackColor = true;
             this.rbtnTeslimSube.CheckedChanged += new System.EventHandler(this.rbtnTeslimSube_CheckedChanged);
@@ -133,7 +133,7 @@ namespace lessonCargo
             this.rbtnTeslimTel.Location = new System.Drawing.Point(17, 70);
             this.rbtnTeslimTel.Name = "rbtnTeslimTel";
             this.rbtnTeslimTel.Size = new System.Drawing.Size(103, 19);
-            this.rbtnTeslimTel.TabIndex = 0;
+            this.rbtnTeslimTel.TabIndex = 5;
             this.rbtnTeslimTel.Text = "Telefon İhbarlı";
             this.rbtnTeslimTel.UseVisualStyleBackColor = true;
             this.rbtnTeslimTel.CheckedChanged += new System.EventHandler(this.rbtnTeslimTel_CheckedChanged);
@@ -144,7 +144,7 @@ namespace lessonCargo
             this.rbtnTeslimAdres.Location = new System.Drawing.Point(17, 25);
             this.rbtnTeslimAdres.Name = "rbtnTeslimAdres";
             this.rbtnTeslimAdres.Size = new System.Drawing.Size(83, 19);
-            this.rbtnTeslimAdres.TabIndex = 0;
+            this.rbtnTeslimAdres.TabIndex = 3;
             this.rbtnTeslimAdres.Text = "Adres Alım";
             this.rbtnTeslimAdres.UseVisualStyleBackColor = true;
             this.rbtnTeslimAdres.CheckedChanged += new System.EventHandler(this.rbtnTeslimAdres_CheckedChanged);
@@ -162,14 +162,14 @@ namespace lessonCargo
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " Alım Hizmetleri ";
             // 
-            // lblAdetSayisi
+            // lblAlimSube
             // 
-            this.lblAdetSayisi.AutoSize = true;
-            this.lblAdetSayisi.Location = new System.Drawing.Point(43, 37);
-            this.lblAdetSayisi.Name = "lblAdetSayisi";
-            this.lblAdetSayisi.Size = new System.Drawing.Size(69, 15);
-            this.lblAdetSayisi.TabIndex = 2;
-            this.lblAdetSayisi.Text = "Adet Sayısı:";
+            this.lblAlimSube.AutoSize = true;
+            this.lblAlimSube.Location = new System.Drawing.Point(167, 47);
+            this.lblAlimSube.Name = "lblAlimSube";
+            this.lblAlimSube.Size = new System.Drawing.Size(38, 15);
+            this.lblAlimSube.TabIndex = 2;
+            this.lblAlimSube.Text = "( 0 ₺ )";
             // 
             // lblAlimAdres
             // 
@@ -186,7 +186,7 @@ namespace lessonCargo
             this.rbtnAlimSube.Location = new System.Drawing.Point(129, 25);
             this.rbtnAlimSube.Name = "rbtnAlimSube";
             this.rbtnAlimSube.Size = new System.Drawing.Size(106, 19);
-            this.rbtnAlimSube.TabIndex = 1;
+            this.rbtnAlimSube.TabIndex = 2;
             this.rbtnAlimSube.Text = "Şubeye Teslim";
             this.rbtnAlimSube.UseVisualStyleBackColor = true;
             this.rbtnAlimSube.CheckedChanged += new System.EventHandler(this.rbtnAlimSube_CheckedChanged);
@@ -197,10 +197,19 @@ namespace lessonCargo
             this.rbtnAlimAdres.Location = new System.Drawing.Point(17, 25);
             this.rbtnAlimAdres.Name = "rbtnAlimAdres";
             this.rbtnAlimAdres.Size = new System.Drawing.Size(83, 19);
-            this.rbtnAlimAdres.TabIndex = 0;
+            this.rbtnAlimAdres.TabIndex = 1;
             this.rbtnAlimAdres.Text = "Adres Alım";
             this.rbtnAlimAdres.UseVisualStyleBackColor = true;
             this.rbtnAlimAdres.CheckedChanged += new System.EventHandler(this.rbtnAlimAdres_CheckedChanged);
+            // 
+            // lblAdetSayisi
+            // 
+            this.lblAdetSayisi.AutoSize = true;
+            this.lblAdetSayisi.Location = new System.Drawing.Point(43, 37);
+            this.lblAdetSayisi.Name = "lblAdetSayisi";
+            this.lblAdetSayisi.Size = new System.Drawing.Size(69, 15);
+            this.lblAdetSayisi.TabIndex = 2;
+            this.lblAdetSayisi.Text = "Adet Sayısı:";
             // 
             // groupBox1
             // 
@@ -219,7 +228,7 @@ namespace lessonCargo
             this.chbMesajBilgi.Location = new System.Drawing.Point(17, 26);
             this.chbMesajBilgi.Name = "chbMesajBilgi";
             this.chbMesajBilgi.Size = new System.Drawing.Size(135, 19);
-            this.chbMesajBilgi.TabIndex = 3;
+            this.chbMesajBilgi.TabIndex = 6;
             this.chbMesajBilgi.Text = "Teslim Bilgi Hizmeti";
             this.chbMesajBilgi.UseVisualStyleBackColor = true;
             this.chbMesajBilgi.CheckedChanged += new System.EventHandler(this.chbMesajBilgi_CheckedChanged);
@@ -238,7 +247,7 @@ namespace lessonCargo
             this.btnDevamZarf.Location = new System.Drawing.Point(202, 32);
             this.btnDevamZarf.Name = "btnDevamZarf";
             this.btnDevamZarf.Size = new System.Drawing.Size(76, 30);
-            this.btnDevamZarf.TabIndex = 3;
+            this.btnDevamZarf.TabIndex = 8;
             this.btnDevamZarf.Text = "Devam Et";
             this.btnDevamZarf.UseVisualStyleBackColor = true;
             this.btnDevamZarf.Click += new System.EventHandler(this.btnDevamZarf_Click);
@@ -435,17 +444,8 @@ namespace lessonCargo
             this.cmbAdetSayisi.Location = new System.Drawing.Point(116, 34);
             this.cmbAdetSayisi.Name = "cmbAdetSayisi";
             this.cmbAdetSayisi.Size = new System.Drawing.Size(69, 24);
-            this.cmbAdetSayisi.TabIndex = 4;
+            this.cmbAdetSayisi.TabIndex = 7;
             this.cmbAdetSayisi.SelectedIndexChanged += new System.EventHandler(this.cmbAdetSayisi_SelectedIndexChanged);
-            // 
-            // lblAlimSube
-            // 
-            this.lblAlimSube.AutoSize = true;
-            this.lblAlimSube.Location = new System.Drawing.Point(167, 47);
-            this.lblAlimSube.Name = "lblAlimSube";
-            this.lblAlimSube.Size = new System.Drawing.Size(38, 15);
-            this.lblAlimSube.TabIndex = 2;
-            this.lblAlimSube.Text = "( 0 ₺ )";
             // 
             // frmZarf
             // 
@@ -462,7 +462,8 @@ namespace lessonCargo
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmZarf";
-            this.Text = " Standart Taşım Hizmetleri";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Standart Hizmet";
             this.Load += new System.EventHandler(this.frmZarf_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

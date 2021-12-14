@@ -62,7 +62,7 @@ namespace lessonCargo
 
         #endregion
 
-        
+
 
         #endregion
 
@@ -73,7 +73,7 @@ namespace lessonCargo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         #region A2: ComboBox
@@ -163,16 +163,15 @@ namespace lessonCargo
             frmKoli koli = new frmKoli();
 
             if (cmbKargoTipi.SelectedIndex == 0)
-            {
                 zarf.ShowDialog();
-                lblTasima.Text = zarf.tasima_bedeli.ToString("0.##");
-                lblEkHiz.Text = zarf.ek_hizmet.ToString("0.##");
-                lblToplam.Text = zarf.toplam.ToString("0.##");
-                lblKdv.Text = zarf.kdv.ToString("0.##");
-                lblGenelTop.Text = zarf.genel_toplam.ToString("0.##");
-            }
             else if (cmbKargoTipi.SelectedIndex == 1)
                 koli.ShowDialog();
+
+            lblTasima.Text = zarf.tasima_bedeli.ToString("0.##");
+            lblEkHiz.Text = zarf.ek_hizmet.ToString("0.##");
+            lblToplam.Text = zarf.toplam.ToString("0.##");
+            lblKdv.Text = zarf.kdv.ToString("0.##");
+            lblGenelTop.Text = zarf.genel_toplam.ToString("0.##");
         }
     }
 }

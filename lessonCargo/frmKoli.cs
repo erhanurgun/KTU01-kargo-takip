@@ -12,31 +12,45 @@ namespace lessonCargo
 {
     public partial class frmKoli : Form
     {
-        #region B1: GLOBAL
+        public double en, boy, yukseklik, agirlik, adet = 1, desi;
+        public double top_agirlik, top_desi, top_es_agirlik;
 
-        #region class: Desi
-        class Desi
+        #region void: desiAl()
+        public void desiAl()
         {
-            public double en, boy, yukseklik;
-
-            #region void: hesapla()
-            public double hesapla()
+            try
             {
-                return (en * boy * yukseklik) / 3000;
+                en = Convert.ToDouble(txtEn.Text);
+                boy = Convert.ToDouble(txtBoy.Text);
+                yukseklik = Convert.ToDouble(txtYukseklik.Text);
+                agirlik = Convert.ToDouble(txtAgirlik.Text);
+
+                desi = (en * boy * yukseklik) / 3000;
+                top_agirlik += agirlik;
+                top_desi += desi;
+
+                if (desi > agirlik)
+                    top_es_agirlik += desi;
+                else
+                    top_es_agirlik += agirlik;
+
+                lblAdet.Text = adet.ToString("0.##");
+                lblTopAgirlik.Text = top_agirlik.ToString("0.##");
+                lblTopDesi.Text = top_desi.ToString("0.##");
+                lblEsasAgirlik.Text = top_es_agirlik.ToString("0.##");
+
+                adet++;
             }
-            #endregion
+            catch (Exception exp)
+            {
+                MessageBox.Show("Lütfen tüm alanları doldurunuz!", "Uyarı !!!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+
+
         }
         #endregion
 
-        #region enum: Tip
-        enum Tip
-        {
-            zarf = 0,
-            koli = 1
-        }
-        #endregion
-
-        #endregion
         public frmKoli()
         {
             InitializeComponent();
@@ -44,13 +58,27 @@ namespace lessonCargo
 
         private void frmPaket_Load(object sender, EventArgs e)
         {
-            Desi desi = new Desi
-            {
-                en = 10,
-                boy = 20,
-                yukseklik = 40
-            };
-            desi.hesapla();
+
         }
+
+        #region event: Click()
+        private void btnPaketEkle_Click(object sender, EventArgs e)
+        {
+            desiAl();
+
+            txtEn.Clear();
+            txtBoy.Clear();
+            txtYukseklik.Clear();
+            txtAgirlik.Clear();
+        }
+        private void btnDevam_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmZarf zarf = new frmZarf();
+            zarf.tasima_bedeli = top_es_agirlik;
+            zarf.tip = false;
+            zarf.Show();
+        }
+        #endregion
     }
 }

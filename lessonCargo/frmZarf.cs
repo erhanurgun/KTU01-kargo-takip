@@ -13,8 +13,9 @@ namespace lessonCargo
     public partial class frmZarf : Form
     {
         public double alim_adres = 4.26, alim_sube = 0, teslim_adres = 4.26, teslim_sube = 1.79, teslim_tel = 3.45, kisa_mesaj = 0.83;
-        public double tasima_bedeli, ek_hizmet, toplam, kdv, genel_toplam;
+        public double tasima_bedeli = 14.76, ek_hizmet, toplam, kdv, genel_toplam;
         public int adet;
+        public bool tip = true;
 
         #region void:
 
@@ -45,7 +46,13 @@ namespace lessonCargo
         public void veriAl()
         {
             adet = Convert.ToInt16(cmbAdetSayisi.Text);
-            tasima_bedeli = 14.76 * adet;
+
+            if (tip == true)
+                tasima_bedeli = 14.76 * adet;
+            
+            else
+                cmbAdetSayisi.Enabled = false;
+
             toplam = tasima_bedeli + ek_hizmet;
             kdv = toplam * 0.235;
             genel_toplam = toplam + kdv;

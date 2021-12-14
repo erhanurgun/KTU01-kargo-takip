@@ -99,7 +99,7 @@ namespace lessonCargo
             this.cmbKargoTipi.Location = new System.Drawing.Point(96, 35);
             this.cmbKargoTipi.Name = "cmbKargoTipi";
             this.cmbKargoTipi.Size = new System.Drawing.Size(204, 23);
-            this.cmbKargoTipi.TabIndex = 0;
+            this.cmbKargoTipi.TabIndex = 6;
             this.cmbKargoTipi.SelectedIndexChanged += new System.EventHandler(this.cmbKargoTipi_SelectedIndexChanged);
             // 
             // label2
@@ -287,7 +287,7 @@ namespace lessonCargo
             this.rtxtAdres.Location = new System.Drawing.Point(99, 164);
             this.rtxtAdres.Name = "rtxtAdres";
             this.rtxtAdres.Size = new System.Drawing.Size(215, 82);
-            this.rtxtAdres.TabIndex = 4;
+            this.rtxtAdres.TabIndex = 5;
             this.rtxtAdres.Text = "";
             // 
             // label4
@@ -343,7 +343,7 @@ namespace lessonCargo
             this.cmbMahalle.Location = new System.Drawing.Point(99, 132);
             this.cmbMahalle.Name = "cmbMahalle";
             this.cmbMahalle.Size = new System.Drawing.Size(215, 23);
-            this.cmbMahalle.TabIndex = 0;
+            this.cmbMahalle.TabIndex = 4;
             this.cmbMahalle.SelectedIndexChanged += new System.EventHandler(this.cmbMahalle_SelectedIndexChanged);
             // 
             // cmbIlce
@@ -354,7 +354,7 @@ namespace lessonCargo
             this.cmbIlce.Location = new System.Drawing.Point(99, 99);
             this.cmbIlce.Name = "cmbIlce";
             this.cmbIlce.Size = new System.Drawing.Size(215, 23);
-            this.cmbIlce.TabIndex = 0;
+            this.cmbIlce.TabIndex = 3;
             this.cmbIlce.SelectedIndexChanged += new System.EventHandler(this.cmbIlce_SelectedIndexChanged);
             // 
             // cmbIl
@@ -365,7 +365,7 @@ namespace lessonCargo
             this.cmbIl.Location = new System.Drawing.Point(99, 67);
             this.cmbIl.Name = "cmbIl";
             this.cmbIl.Size = new System.Drawing.Size(215, 23);
-            this.cmbIl.TabIndex = 0;
+            this.cmbIl.TabIndex = 2;
             this.cmbIl.SelectedIndexChanged += new System.EventHandler(this.cmbIl_SelectedIndexChanged);
             // 
             // cmbUlke
@@ -377,7 +377,7 @@ namespace lessonCargo
             this.cmbUlke.Location = new System.Drawing.Point(99, 35);
             this.cmbUlke.Name = "cmbUlke";
             this.cmbUlke.Size = new System.Drawing.Size(215, 23);
-            this.cmbUlke.TabIndex = 0;
+            this.cmbUlke.TabIndex = 1;
             this.cmbUlke.SelectedIndexChanged += new System.EventHandler(this.cmbUlke_SelectedIndexChanged);
             // 
             // frmAna
