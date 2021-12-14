@@ -46,16 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmAna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmAna.Designer.cs">
+      <DependentUpon>frmAna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKoli.Designer.cs">
+      <DependentUpon>frmKoli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmZarf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmZarf.Designer.cs">
+      <DependentUpon>frmZarf.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmAna.resx">
+      <DependentUpon>frmAna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKoli.resx">
+      <DependentUpon>frmKoli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmZarf.resx">
+      <DependentUpon>frmZarf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

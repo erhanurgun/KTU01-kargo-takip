@@ -11,13 +11,16 @@ using System.Data.SqlClient;
 
 namespace lessonCargo
 {
-    public partial class Form1 : Form
+    public partial class frmAna : Form
     {
+        #region A1: GLOBAL
+
+        #region class: dbBaglan
         class dbBaglan
         {
             public string yol, sorgu, sutun_adi, index_id;
 
-            #region 01: db_calistir();
+            #region void: calistir()
             public void calistir(ComboBox cmb, Form frm)
             {
                 try
@@ -57,16 +60,23 @@ namespace lessonCargo
             #endregion
         }
 
-        public Form1()
+        #endregion
+
+        
+
+        #endregion
+
+        public frmAna()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
+        #region A2: ComboBox
         private void cmbUlke_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbUlke.SelectedIndex != -1)
@@ -144,6 +154,25 @@ namespace lessonCargo
                 rtxtAdres.Enabled = true;
             else
                 rtxtAdres.Enabled = false;
+        }
+        #endregion
+
+        private void cmbKargoTipi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            frmZarf zarf = new frmZarf();
+            frmKoli koli = new frmKoli();
+
+            if (cmbKargoTipi.SelectedIndex == 0)
+            {
+                zarf.ShowDialog();
+                lblTasima.Text = zarf.tasima_bedeli.ToString("0.##");
+                lblEkHiz.Text = zarf.ek_hizmet.ToString("0.##");
+                lblToplam.Text = zarf.toplam.ToString("0.##");
+                lblKdv.Text = zarf.kdv.ToString("0.##");
+                lblGenelTop.Text = zarf.genel_toplam.ToString("0.##");
+            }
+            else if (cmbKargoTipi.SelectedIndex == 1)
+                koli.ShowDialog();
         }
     }
 }
