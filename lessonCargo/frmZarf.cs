@@ -13,7 +13,8 @@ namespace lessonCargo
     public partial class frmZarf : Form
     {
         public double alim_adres = 4.26, alim_sube = 0, teslim_adres = 4.26, teslim_sube = 1.79, teslim_tel = 3.45, kisa_mesaj = 0.83;
-        public double tasima_bedeli = 14.76, ek_hizmet, toplam, kdv, genel_toplam;
+        public double tasima_bedeli, ek_hizmet, toplam, kdv, genel_toplam;
+        public int adet;
 
         #region void:
 
@@ -38,9 +39,13 @@ namespace lessonCargo
 
             veriAl();
         }
+        #endregion
 
+        #region 02: veriAl()
         public void veriAl()
         {
+            adet = Convert.ToInt16(cmbAdetSayisi.Text);
+            tasima_bedeli = 14.76 * adet;
             toplam = tasima_bedeli + ek_hizmet;
             kdv = toplam * 0.235;
             genel_toplam = toplam + kdv;
@@ -62,6 +67,10 @@ namespace lessonCargo
 
         private void frmZarf_Load(object sender, EventArgs e)
         {
+            for (int i = 1; i <= 10; i++)
+                cmbAdetSayisi.Items.Add(i);
+
+            cmbAdetSayisi.SelectedIndex = 0;
             veriAl();
         }
 
@@ -102,6 +111,11 @@ namespace lessonCargo
         private void btnDevamZarf_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbAdetSayisi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            veriAl();
         }
     }
 }

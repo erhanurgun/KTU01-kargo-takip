@@ -38,7 +38,7 @@ namespace lessonCargo
             this.rbtnTeslimTel = new System.Windows.Forms.RadioButton();
             this.rbtnTeslimAdres = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblAlimSube = new System.Windows.Forms.Label();
+            this.lblAdetSayisi = new System.Windows.Forms.Label();
             this.lblAlimAdres = new System.Windows.Forms.Label();
             this.rbtnAlimSube = new System.Windows.Forms.RadioButton();
             this.rbtnAlimAdres = new System.Windows.Forms.RadioButton();
@@ -64,15 +64,14 @@ namespace lessonCargo
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericAdet = new System.Windows.Forms.NumericUpDown();
+            this.cmbAdetSayisi = new System.Windows.Forms.ComboBox();
+            this.lblAlimSube = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAdet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -163,14 +162,14 @@ namespace lessonCargo
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " Alım Hizmetleri ";
             // 
-            // lblAlimSube
+            // lblAdetSayisi
             // 
-            this.lblAlimSube.AutoSize = true;
-            this.lblAlimSube.Location = new System.Drawing.Point(169, 47);
-            this.lblAlimSube.Name = "lblAlimSube";
-            this.lblAlimSube.Size = new System.Drawing.Size(38, 15);
-            this.lblAlimSube.TabIndex = 2;
-            this.lblAlimSube.Text = "( 0 ₺ )";
+            this.lblAdetSayisi.AutoSize = true;
+            this.lblAdetSayisi.Location = new System.Drawing.Point(43, 37);
+            this.lblAdetSayisi.Name = "lblAdetSayisi";
+            this.lblAdetSayisi.Size = new System.Drawing.Size(69, 15);
+            this.lblAdetSayisi.TabIndex = 2;
+            this.lblAdetSayisi.Text = "Adet Sayısı:";
             // 
             // lblAlimAdres
             // 
@@ -236,9 +235,9 @@ namespace lessonCargo
             // 
             // btnDevamZarf
             // 
-            this.btnDevamZarf.Location = new System.Drawing.Point(152, 22);
+            this.btnDevamZarf.Location = new System.Drawing.Point(202, 32);
             this.btnDevamZarf.Name = "btnDevamZarf";
-            this.btnDevamZarf.Size = new System.Drawing.Size(127, 31);
+            this.btnDevamZarf.Size = new System.Drawing.Size(76, 30);
             this.btnDevamZarf.TabIndex = 3;
             this.btnDevamZarf.Text = "Devam Et";
             this.btnDevamZarf.UseVisualStyleBackColor = true;
@@ -419,8 +418,8 @@ namespace lessonCargo
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.numericAdet);
-            this.groupBox6.Controls.Add(this.label1);
+            this.groupBox6.Controls.Add(this.lblAdetSayisi);
+            this.groupBox6.Controls.Add(this.cmbAdetSayisi);
             this.groupBox6.Controls.Add(this.btnDevamZarf);
             this.groupBox6.Location = new System.Drawing.Point(273, 212);
             this.groupBox6.Name = "groupBox6";
@@ -428,26 +427,25 @@ namespace lessonCargo
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             // 
-            // label1
+            // cmbAdetSayisi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Adet:";
+            this.cmbAdetSayisi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAdetSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAdetSayisi.FormattingEnabled = true;
+            this.cmbAdetSayisi.Location = new System.Drawing.Point(116, 34);
+            this.cmbAdetSayisi.Name = "cmbAdetSayisi";
+            this.cmbAdetSayisi.Size = new System.Drawing.Size(69, 24);
+            this.cmbAdetSayisi.TabIndex = 4;
+            this.cmbAdetSayisi.SelectedIndexChanged += new System.EventHandler(this.cmbAdetSayisi_SelectedIndexChanged);
             // 
-            // numericAdet
+            // lblAlimSube
             // 
-            this.numericAdet.Location = new System.Drawing.Point(66, 28);
-            this.numericAdet.Name = "numericAdet";
-            this.numericAdet.Size = new System.Drawing.Size(67, 21);
-            this.numericAdet.TabIndex = 5;
-            this.numericAdet.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.lblAlimSube.AutoSize = true;
+            this.lblAlimSube.Location = new System.Drawing.Point(167, 47);
+            this.lblAlimSube.Name = "lblAlimSube";
+            this.lblAlimSube.Size = new System.Drawing.Size(38, 15);
+            this.lblAlimSube.TabIndex = 2;
+            this.lblAlimSube.Text = "( 0 ₺ )";
             // 
             // frmZarf
             // 
@@ -478,7 +476,6 @@ namespace lessonCargo
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAdet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -493,7 +490,7 @@ namespace lessonCargo
         private System.Windows.Forms.RadioButton rbtnTeslimTel;
         private System.Windows.Forms.RadioButton rbtnTeslimAdres;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lblAlimSube;
+        private System.Windows.Forms.Label lblAdetSayisi;
         private System.Windows.Forms.Label lblAlimAdres;
         private System.Windows.Forms.RadioButton rbtnAlimSube;
         private System.Windows.Forms.RadioButton rbtnAlimAdres;
@@ -519,7 +516,7 @@ namespace lessonCargo
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.NumericUpDown numericAdet;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbAdetSayisi;
+        private System.Windows.Forms.Label lblAlimSube;
     }
 }
