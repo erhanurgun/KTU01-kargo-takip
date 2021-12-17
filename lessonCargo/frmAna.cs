@@ -39,14 +39,13 @@ namespace lessonCargo
 
                     veri_oku = komut.ExecuteReader();
 
-                    int i = 0;
-                    while (veri_oku.Read())
+                    if (veri_oku.Read() != null)
                     {
-                        cmb.Items.Add(veri_oku[sutun_adi]);
-                        ////cmb.ValueMember = veri_oku[index_id].ToString();
-                        i++;
+                        while (veri_oku.Read())
+                            cmb.Items.Add(veri_oku[sutun_adi]);
                     }
-
+                    else
+                        MessageBox.Show("Veri bulunamadı!","Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     baglan.Close();
                 }
@@ -61,8 +60,6 @@ namespace lessonCargo
         }
 
         #endregion
-
-
 
         #endregion
 
@@ -116,7 +113,7 @@ namespace lessonCargo
 
                 dbBaglan db = new dbBaglan();
                 db.yol = @"Data Source=PCI-ACER\SQLSERVEREXP;Initial Catalog=toplu_adres;Integrated Security=True";
-                db.sorgu = "SELECT * FROM ilceler WHERE sehir_id = " + cmbIl.SelectedValue + " ORDER BY ilce_adi ASC";
+                db.sorgu = "SELECT * FROM ilceler FULL OUTER JOIN iller ON ilceler.sehir_id = iller.id WHERE sehir_adi = '" + cmbIl.Text + "' ORDER BY ilce_adi ASC";
                 db.index_id = "id";
                 db.sutun_adi = "ilce_adi";
                 db.calistir(cmbIlce, this);
@@ -140,7 +137,7 @@ namespace lessonCargo
 
                 dbBaglan db = new dbBaglan();
                 db.yol = @"Data Source=PCI-ACER\SQLSERVEREXP;Initial Catalog=toplu_adres;Integrated Security=True";
-                db.sorgu = "SELECT * FROM mahalleler WHERE ilce_id = " + cmbIlce.SelectedValue + " ORDER BY mahalle_adi ASC";
+                db.sorgu = "SELECT * FROM mahalleler FULL OUTER JOIN iller ON mahalleler.ilce_id = ilceler.id WHERE ilce_adi = '" + cmbIlce.Text + "' ORDER BY mahalle_adi ASC";
                 db.sutun_adi = "mahalle_adi";
                 db.calistir(cmbMahalle, this);
             }
