@@ -19,6 +19,7 @@ namespace lessonCargo
         class dbBaglan
         {
             public string yol, sorgu, sutun_adi, index_id;
+            public bool durum = false;
 
             #region void: calistir()
             public void calistir(ComboBox cmb, Form frm)
@@ -39,11 +40,11 @@ namespace lessonCargo
 
                     veri_oku = komut.ExecuteReader();
 
-                    if (veri_oku.Read() != null)
-                    {
+                    if (veri_oku.Read()) durum = true;
+
+                    if (durum)
                         while (veri_oku.Read())
                             cmb.Items.Add(veri_oku[sutun_adi]);
-                    }
                     else
                         MessageBox.Show("Veri bulunamadı!","Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
