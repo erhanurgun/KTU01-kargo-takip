@@ -57,11 +57,6 @@ namespace kargo_takip
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtGPostaKodu = new System.Windows.Forms.TextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -80,9 +75,6 @@ namespace kargo_takip
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -104,11 +96,6 @@ namespace kargo_takip
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.txtAPostaKodu = new System.Windows.Forms.TextBox();
-            this.label119 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -127,9 +114,6 @@ namespace kargo_takip
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
@@ -474,9 +458,6 @@ namespace kargo_takip
             this.gboxGonderici.Controls.Add(this.label23);
             this.gboxGonderici.Controls.Add(this.label22);
             this.gboxGonderici.Controls.Add(this.label21);
-            this.gboxGonderici.Controls.Add(this.label33);
-            this.gboxGonderici.Controls.Add(this.label29);
-            this.gboxGonderici.Controls.Add(this.label24);
             this.gboxGonderici.Controls.Add(this.label18);
             this.gboxGonderici.Controls.Add(this.label15);
             this.gboxGonderici.Controls.Add(this.label12);
@@ -506,11 +487,6 @@ namespace kargo_takip
             this.gboxGondericiAdres.Controls.Add(this.label1);
             this.gboxGondericiAdres.Controls.Add(this.label8);
             this.gboxGondericiAdres.Controls.Add(this.txtGPostaKodu);
-            this.gboxGondericiAdres.Controls.Add(this.label118);
-            this.gboxGondericiAdres.Controls.Add(this.label28);
-            this.gboxGondericiAdres.Controls.Add(this.label27);
-            this.gboxGondericiAdres.Controls.Add(this.label26);
-            this.gboxGondericiAdres.Controls.Add(this.label25);
             this.gboxGondericiAdres.Controls.Add(this.label7);
             this.gboxGondericiAdres.Controls.Add(this.label6);
             this.gboxGondericiAdres.Controls.Add(this.label32);
@@ -568,51 +544,6 @@ namespace kargo_takip
             this.txtGPostaKodu.Name = "txtGPostaKodu";
             this.txtGPostaKodu.Size = new System.Drawing.Size(171, 21);
             this.txtGPostaKodu.TabIndex = 6;
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Location = new System.Drawing.Point(281, 153);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(16, 16);
-            this.label118.TabIndex = 8;
-            this.label118.Text = "d";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(281, 185);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(16, 16);
-            this.label28.TabIndex = 8;
-            this.label28.Text = "d";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(281, 121);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(16, 16);
-            this.label27.TabIndex = 9;
-            this.label27.Text = "d";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(281, 89);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(16, 16);
-            this.label26.TabIndex = 10;
-            this.label26.Text = "d";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(281, 57);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(16, 16);
-            this.label25.TabIndex = 11;
-            this.label25.Text = "d";
             // 
             // label7
             // 
@@ -774,33 +705,6 @@ namespace kargo_takip
             this.label21.TabIndex = 1;
             this.label21.Text = "Soyadı:";
             // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(293, 58);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(16, 16);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "d";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(293, 90);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(16, 16);
-            this.label29.TabIndex = 1;
-            this.label29.Text = "d";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(293, 192);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(16, 16);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "d";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -952,9 +856,6 @@ namespace kargo_takip
             this.gboxAlici.Controls.Add(this.label46);
             this.gboxAlici.Controls.Add(this.label47);
             this.gboxAlici.Controls.Add(this.label48);
-            this.gboxAlici.Controls.Add(this.label49);
-            this.gboxAlici.Controls.Add(this.label50);
-            this.gboxAlici.Controls.Add(this.label51);
             this.gboxAlici.Controls.Add(this.label52);
             this.gboxAlici.Controls.Add(this.label53);
             this.gboxAlici.Controls.Add(this.label54);
@@ -984,11 +885,6 @@ namespace kargo_takip
             this.gboxAliciAdres.Controls.Add(this.label35);
             this.gboxAliciAdres.Controls.Add(this.label36);
             this.gboxAliciAdres.Controls.Add(this.txtAPostaKodu);
-            this.gboxAliciAdres.Controls.Add(this.label119);
-            this.gboxAliciAdres.Controls.Add(this.label37);
-            this.gboxAliciAdres.Controls.Add(this.label38);
-            this.gboxAliciAdres.Controls.Add(this.label39);
-            this.gboxAliciAdres.Controls.Add(this.label40);
             this.gboxAliciAdres.Controls.Add(this.label41);
             this.gboxAliciAdres.Controls.Add(this.label42);
             this.gboxAliciAdres.Controls.Add(this.label43);
@@ -1046,51 +942,6 @@ namespace kargo_takip
             this.txtAPostaKodu.Name = "txtAPostaKodu";
             this.txtAPostaKodu.Size = new System.Drawing.Size(171, 21);
             this.txtAPostaKodu.TabIndex = 6;
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(281, 153);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(16, 16);
-            this.label119.TabIndex = 8;
-            this.label119.Text = "d";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(281, 185);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(16, 16);
-            this.label37.TabIndex = 8;
-            this.label37.Text = "d";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(281, 121);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(16, 16);
-            this.label38.TabIndex = 9;
-            this.label38.Text = "d";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(281, 89);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(16, 16);
-            this.label39.TabIndex = 10;
-            this.label39.Text = "d";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(281, 57);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(16, 16);
-            this.label40.TabIndex = 11;
-            this.label40.Text = "d";
             // 
             // label41
             // 
@@ -1251,33 +1102,6 @@ namespace kargo_takip
             this.label48.Size = new System.Drawing.Size(54, 16);
             this.label48.TabIndex = 1;
             this.label48.Text = "Soyadı:";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(293, 58);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(16, 16);
-            this.label49.TabIndex = 1;
-            this.label49.Text = "d";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(293, 90);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(16, 16);
-            this.label50.TabIndex = 1;
-            this.label50.Text = "d";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(293, 192);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(16, 16);
-            this.label51.TabIndex = 1;
-            this.label51.Text = "d";
             // 
             // label52
             // 
@@ -2415,10 +2239,8 @@ namespace kargo_takip
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.RichTextBox rtxtGKurumDetayi;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.MaskedTextBox mtxtGTelefon;
         private System.Windows.Forms.TextBox txtGEposta;
         private System.Windows.Forms.Label label31;
@@ -2427,10 +2249,6 @@ namespace kargo_takip
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbGMahalle;
@@ -2439,7 +2257,6 @@ namespace kargo_takip
         private System.Windows.Forms.ComboBox cmbGUlke;
         private System.Windows.Forms.TextBox txtGPostaKodu;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabKargoEkle;
         private System.Windows.Forms.TabPage tabKargoTakip;
@@ -2487,10 +2304,6 @@ namespace kargo_takip
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox txtAPostaKodu;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
@@ -2509,9 +2322,6 @@ namespace kargo_takip
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label54;
@@ -2575,8 +2385,6 @@ namespace kargo_takip
         private System.Windows.Forms.MaskedTextBox mtxtATcNo;
         private System.Windows.Forms.MaskedTextBox mtxtTakipNo;
         private System.Windows.Forms.MaskedTextBox mtxtTcNo;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.Label label119;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.Button btnAyarKaydet;
         private System.Windows.Forms.GroupBox groupBox18;
