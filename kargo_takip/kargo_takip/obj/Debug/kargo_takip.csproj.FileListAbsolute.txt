@@ -13,3 +13,8 @@ D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_
 D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmZarf.resources
 D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmKoli.resources
 D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmSifre.resources
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\bin\Debug\Interop.AcroPDFLib.dll
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\Interop.AcroPDFLib.dll
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.csproj.ResolveComReference.cache

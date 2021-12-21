@@ -196,7 +196,7 @@ namespace kargo_takip
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(174, 134);
+            this.label17.Location = new System.Drawing.Point(188, 134);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 15);
             this.label17.TabIndex = 0;
@@ -215,7 +215,7 @@ namespace kargo_takip
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(149, 99);
+            this.label14.Location = new System.Drawing.Point(167, 100);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 15);
             this.label14.TabIndex = 0;
@@ -252,7 +252,7 @@ namespace kargo_takip
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(110, 63);
+            this.label11.Location = new System.Drawing.Point(133, 65);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 15);
             this.label11.TabIndex = 0;
@@ -271,7 +271,7 @@ namespace kargo_takip
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 31);
+            this.label3.Location = new System.Drawing.Point(65, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 15);
             this.label3.TabIndex = 0;

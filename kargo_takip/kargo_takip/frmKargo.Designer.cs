@@ -84,6 +84,7 @@ namespace kargo_takip
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabKargoEkle = new System.Windows.Forms.TabPage();
             this.gboxKargoImg = new System.Windows.Forms.GroupBox();
+            this.picbKargoImg = new System.Windows.Forms.PictureBox();
             this.gboxIslemler = new System.Windows.Forms.GroupBox();
             this.btnKargoGuncelle = new System.Windows.Forms.Button();
             this.btnKargoKaydet = new System.Windows.Forms.Button();
@@ -122,6 +123,7 @@ namespace kargo_takip
             this.cmbAKurumKisi = new System.Windows.Forms.ComboBox();
             this.tabKargoTakip = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.picbLogo = new System.Windows.Forms.PictureBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.mtxtTakipNo = new System.Windows.Forms.MaskedTextBox();
             this.btnGoruntule = new System.Windows.Forms.Button();
@@ -216,8 +218,10 @@ namespace kargo_takip
             this.cmbYukleniyor = new System.Windows.Forms.CheckBox();
             this.cmbIkonGoster = new System.Windows.Forms.CheckBox();
             this.cmbBasCalistir = new System.Windows.Forms.CheckBox();
-            this.picbKargoImg = new System.Windows.Forms.PictureBox();
-            this.picbLogo = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pdfCiktiAl = new AxAcroPDFLib.AxAcroPDF();
+            this.button2 = new System.Windows.Forms.Button();
             this.gboxOzet.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gboxGonderici.SuspendLayout();
@@ -225,11 +229,13 @@ namespace kargo_takip
             this.tabControl1.SuspendLayout();
             this.tabKargoEkle.SuspendLayout();
             this.gboxKargoImg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbKargoImg)).BeginInit();
             this.gboxIslemler.SuspendLayout();
             this.gboxAlici.SuspendLayout();
             this.gboxAliciAdres.SuspendLayout();
             this.tabKargoTakip.SuspendLayout();
             this.groupBox17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbLogo)).BeginInit();
             this.groupBox16.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -243,8 +249,8 @@ namespace kargo_takip
             this.tabAyarlar.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbKargoImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbLogo)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfCiktiAl)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxOzet
@@ -802,6 +808,16 @@ namespace kargo_takip
             this.gboxKargoImg.TabIndex = 9;
             this.gboxKargoImg.TabStop = false;
             // 
+            // picbKargoImg
+            // 
+            this.picbKargoImg.Image = global::kargo_takip.Properties.Resources.kargo_entegrasyonu;
+            this.picbKargoImg.Location = new System.Drawing.Point(7, 15);
+            this.picbKargoImg.Name = "picbKargoImg";
+            this.picbKargoImg.Size = new System.Drawing.Size(306, 292);
+            this.picbKargoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picbKargoImg.TabIndex = 8;
+            this.picbKargoImg.TabStop = false;
+            // 
             // gboxIslemler
             // 
             this.gboxIslemler.Controls.Add(this.btnKargoGuncelle);
@@ -1187,6 +1203,16 @@ namespace kargo_takip
             this.groupBox17.TabIndex = 4;
             this.groupBox17.TabStop = false;
             // 
+            // picbLogo
+            // 
+            this.picbLogo.Image = global::kargo_takip.Properties.Resources.vip_kargo_logo;
+            this.picbLogo.Location = new System.Drawing.Point(7, 15);
+            this.picbLogo.Name = "picbLogo";
+            this.picbLogo.Size = new System.Drawing.Size(314, 118);
+            this.picbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picbLogo.TabIndex = 0;
+            this.picbLogo.TabStop = false;
+            // 
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.mtxtTakipNo);
@@ -1497,6 +1523,7 @@ namespace kargo_takip
             // 
             this.tabKargoListesi.Controls.Add(this.groupBox11);
             this.tabKargoListesi.Controls.Add(this.groupBox10);
+            this.tabKargoListesi.Controls.Add(this.groupBox1);
             this.tabKargoListesi.Controls.Add(this.groupBox7);
             this.tabKargoListesi.Location = new System.Drawing.Point(4, 24);
             this.tabKargoListesi.Name = "tabKargoListesi";
@@ -1509,9 +1536,9 @@ namespace kargo_takip
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.dataKargoListesi);
-            this.groupBox11.Location = new System.Drawing.Point(7, 314);
+            this.groupBox11.Location = new System.Drawing.Point(287, 314);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(1009, 378);
+            this.groupBox11.Size = new System.Drawing.Size(729, 378);
             this.groupBox11.TabIndex = 2;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = " Kargo Listesi ";
@@ -1521,7 +1548,7 @@ namespace kargo_takip
             this.dataKargoListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataKargoListesi.Location = new System.Drawing.Point(6, 21);
             this.dataKargoListesi.Name = "dataKargoListesi";
-            this.dataKargoListesi.Size = new System.Drawing.Size(997, 350);
+            this.dataKargoListesi.Size = new System.Drawing.Size(717, 350);
             this.dataKargoListesi.TabIndex = 0;
             // 
             // groupBox10
@@ -2128,25 +2155,44 @@ namespace kargo_takip
             this.cmbBasCalistir.Text = "Başlangıçta Çalıştır";
             this.cmbBasCalistir.UseVisualStyleBackColor = true;
             // 
-            // picbKargoImg
+            // groupBox1
             // 
-            this.picbKargoImg.Image = global::kargo_takip.Properties.Resources.kargo_entegrasyonu;
-            this.picbKargoImg.Location = new System.Drawing.Point(7, 15);
-            this.picbKargoImg.Name = "picbKargoImg";
-            this.picbKargoImg.Size = new System.Drawing.Size(306, 292);
-            this.picbKargoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picbKargoImg.TabIndex = 8;
-            this.picbKargoImg.TabStop = false;
+            this.groupBox1.Controls.Add(this.pdfCiktiAl);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 314);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(273, 378);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = " Çıktı ";
             // 
-            // picbLogo
+            // button1
             // 
-            this.picbLogo.Image = global::kargo_takip.Properties.Resources.vip_kargo_logo;
-            this.picbLogo.Location = new System.Drawing.Point(7, 15);
-            this.picbLogo.Name = "picbLogo";
-            this.picbLogo.Size = new System.Drawing.Size(314, 118);
-            this.picbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picbLogo.TabIndex = 0;
-            this.picbLogo.TabStop = false;
+            this.button1.Location = new System.Drawing.Point(6, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 38);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "📜 TEK ÇIKTI AL";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pdfCiktiAl
+            // 
+            this.pdfCiktiAl.Enabled = true;
+            this.pdfCiktiAl.Location = new System.Drawing.Point(6, 21);
+            this.pdfCiktiAl.Name = "pdfCiktiAl";
+            this.pdfCiktiAl.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfCiktiAl.OcxState")));
+            this.pdfCiktiAl.Size = new System.Drawing.Size(261, 306);
+            this.pdfCiktiAl.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(139, 334);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 38);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "📜 TÜM ÇIKTIYI AL";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmKargo
             // 
@@ -2172,6 +2218,7 @@ namespace kargo_takip
             this.tabControl1.ResumeLayout(false);
             this.tabKargoEkle.ResumeLayout(false);
             this.gboxKargoImg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picbKargoImg)).EndInit();
             this.gboxIslemler.ResumeLayout(false);
             this.gboxIslemler.PerformLayout();
             this.gboxAlici.ResumeLayout(false);
@@ -2180,6 +2227,7 @@ namespace kargo_takip
             this.gboxAliciAdres.PerformLayout();
             this.tabKargoTakip.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picbLogo)).EndInit();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             this.groupBox14.ResumeLayout(false);
@@ -2199,8 +2247,8 @@ namespace kargo_takip
             this.groupBox19.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbKargoImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbLogo)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pdfCiktiAl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2395,5 +2443,9 @@ namespace kargo_takip
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.Label lblMesafe;
         private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private AxAcroPDFLib.AxAcroPDF pdfCiktiAl;
+        private System.Windows.Forms.Button button2;
     }
 }
