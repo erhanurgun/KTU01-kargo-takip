@@ -1,0 +1,15 @@
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\bin\Debug\kargo_takip.exe.config
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\bin\Debug\kargo_takip.exe
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\bin\Debug\kargo_takip.pdb
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.csproj.AssemblyReference.cache
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmGiris.resources
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.Properties.Resources.resources
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.csproj.GenerateResource.cache
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.csproj.CoreCompileInputs.cache
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.exe
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.pdb
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmKargo.resources
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmMusteri.resources
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmZarf.resources
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmKoli.resources
+D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\obj\Debug\kargo_takip.frmSifre.resources
