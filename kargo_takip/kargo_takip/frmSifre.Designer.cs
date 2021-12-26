@@ -29,11 +29,14 @@ namespace kargo_takip
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSifre));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSifreAl = new System.Windows.Forms.Button();
             this.txtEposta = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -55,6 +58,7 @@ namespace kargo_takip
             this.btnSifreAl.TabIndex = 3;
             this.btnSifreAl.Text = "✉️ ŞİFRE AL";
             this.btnSifreAl.UseVisualStyleBackColor = true;
+            this.btnSifreAl.Click += new System.EventHandler(this.btnSifreAl_Click);
             // 
             // txtEposta
             // 
@@ -62,6 +66,10 @@ namespace kargo_takip
             this.txtEposta.Name = "txtEposta";
             this.txtEposta.Size = new System.Drawing.Size(163, 21);
             this.txtEposta.TabIndex = 1;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmSifre
             // 
@@ -78,8 +86,10 @@ namespace kargo_takip
             this.Name = "frmSifre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Şifre Sıfırlama";
+            this.Load += new System.EventHandler(this.frmSifre_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -89,5 +99,6 @@ namespace kargo_takip
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSifreAl;
         private System.Windows.Forms.TextBox txtEposta;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

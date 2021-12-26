@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Net;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace kargo_takip
 {
@@ -29,19 +31,18 @@ namespace kargo_takip
         }
         #endregion
 
-        #region A1: Değişkenler
-        public string yol, sorgu, sutun_adi;
-        public string txt_kadi, txt_sifre, db_kadi, db_sifre;
-        public bool durum = false, db_durum;
-
+        #region A1: Global Değişkenler
         SqlConnection baglan = new SqlConnection();
         SqlCommand komut = new SqlCommand();
         SqlDataReader veri_oku;
         ComboBox cmb;
+        TextBox txt;
         Form frm;
+        ErrorProvider hata;
         #endregion
 
         #region A2: Veritabanına Bağlan: dbBaglan()
+        public string yol, sorgu, sutun_adi;
         public void dbBaglan(int tip)
         {
             try
@@ -54,7 +55,8 @@ namespace kargo_takip
                 if (baglan.State == ConnectionState.Closed) baglan.Open();
 
                 if (tip == 1) btnGirisYap();
-                else if (tip == 2) cmbVeriOku();
+                else if (tip == 2) btnSifreAl();
+                else if (tip == 3) emailGonder();
 
                 baglan.Close();
             }
@@ -65,10 +67,11 @@ namespace kargo_takip
             }
         }
         #endregion
-        
+
         #region A3: Verileri Oku:
 
         #region 01: btnGirisYap()
+        public string txt_kadi, txt_sifre, db_kadi, db_sifre;
         public void btnGirisYap()
         {
             veri_oku = komut.ExecuteReader();
@@ -85,26 +88,72 @@ namespace kargo_takip
                     break;
                 }
             }
-            
+
             if (txt_kadi != db_kadi || txt_sifre != db_sifre)
                 MessageBox.Show("Kullanıcı Adı veya Şifre Yanlış!", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         #endregion
 
-        #region 02: cmbVeriOku():
-        public void cmbVeriOku()
+        #region 02: Email Gönder: emailGonder()
+        public string smtp_email = "gmail_email_adresiniz";
+        public string smtp_sifre = "gmail_email_sifreniz";
+        public string smtp_baslik = "Kargo Takip Uygulaması";
+        public string send_konu = "Şifre Hatırlatma İşlemi";
+        public string send_mesaj, db_email, txt_email;
+        public bool gonder = false;
+        public void emailGonder()
         {
             veri_oku = komut.ExecuteReader();
+            while (veri_oku.Read())
+            {
+                db_email = veri_oku["email"].ToString();
+                send_mesaj = "<h1>Şifre Hatırlatma Servisi</h1>" +
+                             "<b>Kullanıcı Adınız: </b>" + veri_oku["kullanici_adi"] + "<br />" +
+                             "<b>Şifreniz .............: </b>" + veri_oku["sifre"];
+                if (db_email.ToLower() == txt_email.ToLower())
 
-            if (veri_oku.Read()) durum = true;
+                {
+                    gonder = true;
+                    try
+                    {
+                        SmtpClient client = new SmtpClient
+                        {
+                            Credentials = new NetworkCredential(smtp_email, smtp_sifre),
+                            Port = 587,
+                            Host = "smtp.gmail.com",
+                            EnableSsl = true,
+                        };
 
-            if (durum)
-                while (veri_oku.Read())
-                    cmb.Items.Add(veri_oku[sutun_adi]);
-            else
-                MessageBox.Show("Veri bulunamadı!", "UYARI !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MailMessage mail = new MailMessage
+                        {
+                            From = new MailAddress(smtp_email, smtp_baslik),
+                            Subject = send_konu,
+                            Body = send_mesaj,
+                            IsBodyHtml = true,
+                        };
+
+                        mail.To.Add(txt_email);
+                        client.Send(mail);
+
+                        MessageBox.Show("Email gönderme işlemi başarılı bir şekilde tamamlandı!", "BAŞARILI !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Form.ActiveForm.Close();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show("Beklenmedik bir sorun oluştu!", "HATA !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show(exp.ToString());
+                    }
+                    break;
+                }
+            }
+            if (txt_email == "")
+                MessageBox.Show("Lütfen bir mail adresi giriniz", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (txt_email != "" && gonder == false)
+                MessageBox.Show("Bu email adresine ait bir kullanıcı bulunamadı!", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         #endregion
+
+        
 
         #endregion
     }
