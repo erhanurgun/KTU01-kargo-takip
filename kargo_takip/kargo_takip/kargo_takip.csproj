@@ -82,6 +82,7 @@
     <Compile Include="frmZarf.Designer.cs">
       <DependentUpon>frmZarf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmGiris.resx">

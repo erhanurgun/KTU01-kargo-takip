@@ -76,6 +76,7 @@ namespace kargo_takip
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(262, 193);
             this.Name = "frmSifre";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Şifre Sıfırlama";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

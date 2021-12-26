@@ -64,6 +64,7 @@ namespace kargo_takip
             this.btnGiris.TabIndex = 3;
             this.btnGiris.Text = " 🔒 GİRİŞ YAP";
             this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // linkSifrem
             // 
@@ -74,6 +75,7 @@ namespace kargo_takip
             this.linkSifrem.TabIndex = 4;
             this.linkSifrem.TabStop = true;
             this.linkSifrem.Text = "Şifreni mi unuttun ?";
+            this.linkSifrem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSifrem_LinkClicked);
             // 
             // txtSifre
             // 
@@ -117,6 +119,7 @@ namespace kargo_takip
             this.linkWebsite.TabIndex = 8;
             this.linkWebsite.TabStop = true;
             this.linkWebsite.Text = "www.erhanurgun.com.tr";
+            this.linkWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsite_LinkClicked);
             // 
             // label3
             // 

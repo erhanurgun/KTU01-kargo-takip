@@ -88,7 +88,6 @@ namespace kargo_takip
             this.gboxIslemler = new System.Windows.Forms.GroupBox();
             this.btnKargoGuncelle = new System.Windows.Forms.Button();
             this.btnKargoKaydet = new System.Windows.Forms.Button();
-            this.label79 = new System.Windows.Forms.Label();
             this.gboxAlici = new System.Windows.Forms.GroupBox();
             this.mtxtATcNo = new System.Windows.Forms.MaskedTextBox();
             this.gboxAliciAdres = new System.Windows.Forms.GroupBox();
@@ -191,12 +190,6 @@ namespace kargo_takip
             this.label69 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.mtxtTcNo = new System.Windows.Forms.MaskedTextBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
             this.btnFiltrele = new System.Windows.Forms.Button();
             this.label62 = new System.Windows.Forms.Label();
             this.cmbFiltreTipi = new System.Windows.Forms.ComboBox();
@@ -822,7 +815,6 @@ namespace kargo_takip
             // 
             this.gboxIslemler.Controls.Add(this.btnKargoGuncelle);
             this.gboxIslemler.Controls.Add(this.btnKargoKaydet);
-            this.gboxIslemler.Controls.Add(this.label79);
             this.gboxIslemler.Location = new System.Drawing.Point(695, 279);
             this.gboxIslemler.Name = "gboxIslemler";
             this.gboxIslemler.Size = new System.Drawing.Size(320, 98);
@@ -847,15 +839,6 @@ namespace kargo_takip
             this.btnKargoKaydet.TabIndex = 0;
             this.btnKargoKaydet.Text = "💾 KAYDET";
             this.btnKargoKaydet.UseVisualStyleBackColor = true;
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(289, 47);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(16, 16);
-            this.label79.TabIndex = 9;
-            this.label79.Text = "d";
             // 
             // gboxAlici
             // 
@@ -1863,12 +1846,6 @@ namespace kargo_takip
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.mtxtTcNo);
-            this.groupBox7.Controls.Add(this.label68);
-            this.groupBox7.Controls.Add(this.label67);
-            this.groupBox7.Controls.Add(this.label66);
-            this.groupBox7.Controls.Add(this.label65);
-            this.groupBox7.Controls.Add(this.label64);
-            this.groupBox7.Controls.Add(this.label63);
             this.groupBox7.Controls.Add(this.btnFiltrele);
             this.groupBox7.Controls.Add(this.label62);
             this.groupBox7.Controls.Add(this.cmbFiltreTipi);
@@ -1899,60 +1876,6 @@ namespace kargo_takip
             this.mtxtTcNo.Size = new System.Drawing.Size(128, 21);
             this.mtxtTcNo.TabIndex = 11;
             this.mtxtTcNo.ValidatingType = typeof(int);
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(238, 218);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(16, 16);
-            this.label68.TabIndex = 8;
-            this.label68.Text = "d";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(238, 187);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(16, 16);
-            this.label67.TabIndex = 8;
-            this.label67.Text = "d";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(238, 155);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(16, 16);
-            this.label66.TabIndex = 8;
-            this.label66.Text = "d";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(238, 123);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(16, 16);
-            this.label65.TabIndex = 8;
-            this.label65.Text = "d";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(238, 91);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(16, 16);
-            this.label64.TabIndex = 8;
-            this.label64.Text = "d";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(238, 61);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(16, 16);
-            this.label63.TabIndex = 8;
-            this.label63.Text = "d";
             // 
             // btnFiltrele
             // 
@@ -2220,7 +2143,6 @@ namespace kargo_takip
             this.gboxKargoImg.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picbKargoImg)).EndInit();
             this.gboxIslemler.ResumeLayout(false);
-            this.gboxIslemler.PerformLayout();
             this.gboxAlici.ResumeLayout(false);
             this.gboxAlici.PerformLayout();
             this.gboxAliciAdres.ResumeLayout(false);
@@ -2329,12 +2251,6 @@ namespace kargo_takip
         private System.Windows.Forms.GroupBox gboxKargoImg;
         private System.Windows.Forms.PictureBox picbKargoImg;
         private System.Windows.Forms.Button btnFiltrele;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label63;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox12;
@@ -2380,7 +2296,6 @@ namespace kargo_takip
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label lblOzetGGonAdet;
         private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label lblOzetGIndirim;
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.Label lblOzetGMusteriNo;
