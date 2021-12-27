@@ -56,8 +56,8 @@ namespace kargo_takip
 
                 if (tip == 1) btnGirisYap();
                 else if (tip == 2) btnSifreAl();
-                else if (tip == 3) emailGonder();
-
+                else
+                    MessageBox.Show("Veritabanına bağlantı sağlandı fakat herhangi bir işlem yapılmadı!", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 baglan.Close();
             }
             catch (Exception exp)
@@ -68,7 +68,7 @@ namespace kargo_takip
         }
         #endregion
 
-        #region A3: Verileri Oku:
+        #region A3: Verileri İşle:
 
         #region 01: btnGirisYap()
         public string txt_kadi, txt_sifre, db_kadi, db_sifre;
@@ -94,55 +94,22 @@ namespace kargo_takip
         }
         #endregion
 
-        #region 02: Email Gönder: emailGonder()
-        public string smtp_email = "gmail_email_adresiniz";
-        public string smtp_sifre = "gmail_email_sifreniz";
-        public string smtp_baslik = "Kargo Takip Uygulaması";
-        public string send_konu = "Şifre Hatırlatma İşlemi";
-        public string send_mesaj, db_email, txt_email;
-        public bool gonder = false;
-        public void emailGonder()
+        #region 02: btnSifreAl()
+        public string db_email, txt_email;
+        public bool gonder;
+        public void btnSifreAl()
         {
             veri_oku = komut.ExecuteReader();
             while (veri_oku.Read())
             {
                 db_email = veri_oku["email"].ToString();
-                send_mesaj = "<h1>Şifre Hatırlatma Servisi</h1>" +
-                             "<b>Kullanıcı Adınız: </b>" + veri_oku["kullanici_adi"] + "<br />" +
+                send_konu = "Şifre Hatırlatma Servisi";
+                send_mesaj = "<b>Kullanıcı Adınız: </b>" + veri_oku["kullanici_adi"] + "<br />" +
                              "<b>Şifreniz .............: </b>" + veri_oku["sifre"];
                 if (db_email.ToLower() == txt_email.ToLower())
-
                 {
                     gonder = true;
-                    try
-                    {
-                        SmtpClient client = new SmtpClient
-                        {
-                            Credentials = new NetworkCredential(smtp_email, smtp_sifre),
-                            Port = 587,
-                            Host = "smtp.gmail.com",
-                            EnableSsl = true,
-                        };
-
-                        MailMessage mail = new MailMessage
-                        {
-                            From = new MailAddress(smtp_email, smtp_baslik),
-                            Subject = send_konu,
-                            Body = send_mesaj,
-                            IsBodyHtml = true,
-                        };
-
-                        mail.To.Add(txt_email);
-                        client.Send(mail);
-
-                        MessageBox.Show("Email gönderme işlemi başarılı bir şekilde tamamlandı!", "BAŞARILI !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Form.ActiveForm.Close();
-                    }
-                    catch (Exception exp)
-                    {
-                        MessageBox.Show("Beklenmedik bir sorun oluştu!", "HATA !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //MessageBox.Show(exp.ToString());
-                    }
+                    emailGonder();
                     break;
                 }
             }
@@ -153,7 +120,45 @@ namespace kargo_takip
         }
         #endregion
 
-        
+        #region 03: emailGonder()
+        public string smtp_email = "btsmtpdemo@gmail.com";
+        public string smtp_sifre = "Smtp785*?";
+        public string send_baslik = "Kargo Takip Uygulaması";
+        public string send_konu, send_mesaj;
+        public void emailGonder()
+        {
+            try
+            {
+                SmtpClient client = new SmtpClient
+                {
+                    Credentials = new NetworkCredential(smtp_email, smtp_sifre),
+                    Port = 587,
+                    Host = "smtp.gmail.com",
+                    EnableSsl = true,
+                };
+
+                MailMessage mail = new MailMessage
+                {
+                    From = new MailAddress(smtp_email, send_baslik),
+                    Subject = send_konu,
+                    Body = send_mesaj,
+                    IsBodyHtml = true,
+                };
+
+                mail.To.Add(txt_email);
+                client.Send(mail);
+
+                MessageBox.Show("Email gönderme işlemi başarılı bir şekilde tamamlandı!", "BAŞARILI !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form.ActiveForm.Close();
+            }
+            catch (Exception exp)
+            {
+                //MessageBox.Show("Beklenmedik bir sorun oluştu!", "HATA !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exp.ToString());
+            }
+        }
+
+        #endregion
 
         #endregion
     }

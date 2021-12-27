@@ -21,7 +21,7 @@ namespace kargo_takip
 
         private void frmSifre_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnSifreAl_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace kargo_takip
                 sorgu = "SELECT * FROM personeller WHERE durum = 1",
                 txt_email = txtEposta.Text
             };
-            global.dbBaglan(3);
+            global.dbBaglan(2);
         }
     }
 }
