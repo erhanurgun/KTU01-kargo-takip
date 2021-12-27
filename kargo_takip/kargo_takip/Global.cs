@@ -38,11 +38,13 @@ namespace kargo_takip
         ComboBox cmb;
         TextBox txt;
         Form frm;
-        ErrorProvider hata;
+        Control ctrl;
+        //ErrorProvider err;
         #endregion
 
-        #region A2: Veritabanına Bağlan: dbBaglan()
-        public string yol, sorgu, sutun_adi;
+        #region A2: Veritabanına Bağlan:
+        public string yol = @"Data Source=PCI-ACER\SQLSERVEREXP;Initial Catalog=kargo_takip;Integrated Security=True";
+        public string sorgu, sutun_adi;
         public void dbBaglan(int tip)
         {
             try
@@ -56,6 +58,7 @@ namespace kargo_takip
 
                 if (tip == 1) btnGirisYap();
                 else if (tip == 2) btnSifreAl();
+                else if (tip == 3) veriGetir();
                 else
                     MessageBox.Show("Veritabanına bağlantı sağlandı fakat herhangi bir işlem yapılmadı!", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 baglan.Close();
@@ -63,7 +66,8 @@ namespace kargo_takip
             catch (Exception exp)
             {
                 //MessageBox.Show("Beklenmedik bir hata oluştu!", "HATA !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show(hataSatiriniBul(exp).ToString() + " numaralı satırda hata var!", "Hata Mesajı !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exp.ToString(), "Hata Mesajı !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(hataSatiriniBul(exp).ToString() + " numaralı satırda hata var!", "Hata Mesajı !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -134,7 +138,7 @@ namespace kargo_takip
                     Credentials = new NetworkCredential(smtp_email, smtp_sifre),
                     Port = 587,
                     Host = "smtp.gmail.com",
-                    EnableSsl = true,
+                    EnableSsl = true
                 };
 
                 MailMessage mail = new MailMessage
@@ -142,7 +146,7 @@ namespace kargo_takip
                     From = new MailAddress(smtp_email, send_baslik),
                     Subject = send_konu,
                     Body = send_mesaj,
-                    IsBodyHtml = true,
+                    IsBodyHtml = true
                 };
 
                 mail.To.Add(txt_email);
@@ -158,6 +162,98 @@ namespace kargo_takip
             }
         }
 
+        #endregion
+
+        #region 04: veriGetir()
+        public string db_tc;
+        public bool db_durum;
+        public int mus_kurum_kisi;
+        public string mus_kurum_detay, mus_no, mus_ad, mus_soyad, mus_tel, mus_eposta;
+
+        public void veriGetir()
+        {
+            veri_oku = komut.ExecuteReader();
+            while (veri_oku.Read())
+            {
+                db_tc = veri_oku["tc"].ToString();
+                db_durum = Convert.ToBoolean(veri_oku["durum"]);
+
+                if (tc_cek == db_tc && db_durum)
+                {
+                    mus_kurum_kisi = Convert.ToInt16(veri_oku["musteri_tip"]);
+                    mus_kurum_detay = veri_oku["kurum_detay"].ToString();
+                    mus_no = veri_oku["musteri_no"].ToString();
+                    mus_ad = veri_oku["ad"].ToString();
+                    mus_soyad = veri_oku["soyad"].ToString();
+                    mus_tel = veri_oku["telefon"].ToString();
+                    mus_eposta = veri_oku["eposta"].ToString();
+                    break;
+                }
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region A4: Kontrolleri Sağla:
+
+        #region 01: frmTemizle()
+        public void frmTemizle(Control ctrl)
+        {
+            string baslik = "Onaylama";
+            string mesaj = "Temizleme işlemini onaylıyor musunuz?";
+            foreach (Control c in ctrl.Controls)
+            {
+                if (typeof(TextBox) == c.GetType())
+                    ((TextBox)(c)).Text = "";
+                else if (typeof(MaskedTextBox) == c.GetType())
+                    ((MaskedTextBox)(c)).Text = "";
+                else if (typeof(RichTextBox) == c.GetType())
+                    ((RichTextBox)(c)).Text = "";
+                else if (typeof(ComboBox) == c.GetType())
+                    ((ComboBox)(c)).SelectedIndex = -1;
+                else
+                    frmTemizle(c);
+            }
+        }
+        #endregion
+
+        #region 02: tcKontrol();
+        public string tc_cek, tc_bul;
+        public void tcKontrol(ErrorProvider err, MaskedTextBox txt, bool veri_al)
+        {
+            if (tc_cek.Length > 8)
+            {
+                string str_sayi = "";
+
+                for (int i = 0; i < 9; i++)
+                    str_sayi += tc_cek[i].ToString();
+
+                int tek = 0, cift = 0;
+
+                for (int i = 0; i < 9; i += 2)
+                    tek += str_sayi[i] - '0';
+
+                for (int i = 1; i < 9; i += 2)
+                    cift += str_sayi[i] - '0';
+
+                int bas_10 = ((tek * 7) - cift) % 10;
+                int ilk_9 = 0;
+
+                for (int i = 0; i < 9; i++)
+                    ilk_9 += str_sayi[i] - '0';
+
+                int bas_11 = (ilk_9 + bas_10) % 10;
+                tc_bul = str_sayi + bas_10.ToString() + bas_11.ToString();
+
+                if (tc_cek.Length == 11 && (tc_cek != tc_bul))
+                    err.SetError(txt, "T.C. kimlik numarası yanlış girildi!");
+                else if(tc_cek == tc_bul && veri_al)
+                    dbBaglan(3);
+                else
+                    err.SetError(txt, "");
+            }
+        }
         #endregion
 
         #endregion

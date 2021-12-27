@@ -29,6 +29,7 @@ namespace kargo_takip
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKargo));
             this.gboxOzet = new System.Windows.Forms.GroupBox();
             this.cmbKargoTipi = new System.Windows.Forms.ComboBox();
@@ -77,15 +78,15 @@ namespace kargo_takip
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbGMusteriTipi = new System.Windows.Forms.ComboBox();
             this.cmbGKurumKisi = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabKargoEkle = new System.Windows.Forms.TabPage();
             this.gboxKargoImg = new System.Windows.Forms.GroupBox();
             this.picbKargoImg = new System.Windows.Forms.PictureBox();
             this.gboxIslemler = new System.Windows.Forms.GroupBox();
+            this.btnKargoTemizle = new System.Windows.Forms.Button();
+            this.btnKargoSil = new System.Windows.Forms.Button();
             this.btnKargoGuncelle = new System.Windows.Forms.Button();
             this.btnKargoKaydet = new System.Windows.Forms.Button();
             this.gboxAlici = new System.Windows.Forms.GroupBox();
@@ -116,9 +117,7 @@ namespace kargo_takip
             this.label48 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
-            this.cmbAMusteriTipi = new System.Windows.Forms.ComboBox();
             this.cmbAKurumKisi = new System.Windows.Forms.ComboBox();
             this.tabKargoTakip = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -188,6 +187,10 @@ namespace kargo_takip
             this.label80 = new System.Windows.Forms.Label();
             this.lblOzetGAdi = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pdfCiktiAl = new AxAcroPDFLib.AxAcroPDF();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.mtxtTcNo = new System.Windows.Forms.MaskedTextBox();
             this.btnFiltrele = new System.Windows.Forms.Button();
@@ -211,10 +214,7 @@ namespace kargo_takip
             this.cmbYukleniyor = new System.Windows.Forms.CheckBox();
             this.cmbIkonGoster = new System.Windows.Forms.CheckBox();
             this.cmbBasCalistir = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pdfCiktiAl = new AxAcroPDFLib.AxAcroPDF();
-            this.button2 = new System.Windows.Forms.Button();
+            this.hataMesaji = new System.Windows.Forms.ErrorProvider(this.components);
             this.gboxOzet.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gboxGonderici.SuspendLayout();
@@ -238,12 +238,13 @@ namespace kargo_takip
             this.groupBox10.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pdfCiktiAl)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.tabAyarlar.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox18.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pdfCiktiAl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hataMesaji)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxOzet
@@ -324,7 +325,7 @@ namespace kargo_takip
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(49, 21);
+            this.label20.Location = new System.Drawing.Point(76, 20);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(116, 15);
             this.label20.TabIndex = 0;
@@ -352,7 +353,7 @@ namespace kargo_takip
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(155, 168);
+            this.label17.Location = new System.Drawing.Point(169, 167);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 15);
             this.label17.TabIndex = 0;
@@ -371,7 +372,7 @@ namespace kargo_takip
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(131, 130);
+            this.label14.Location = new System.Drawing.Point(148, 131);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 15);
             this.label14.TabIndex = 0;
@@ -408,7 +409,7 @@ namespace kargo_takip
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(91, 91);
+            this.label11.Location = new System.Drawing.Point(114, 92);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 15);
             this.label11.TabIndex = 0;
@@ -427,7 +428,7 @@ namespace kargo_takip
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 55);
+            this.label3.Location = new System.Drawing.Point(46, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 15);
             this.label3.TabIndex = 0;
@@ -459,9 +460,7 @@ namespace kargo_takip
             this.gboxGonderici.Controls.Add(this.label21);
             this.gboxGonderici.Controls.Add(this.label18);
             this.gboxGonderici.Controls.Add(this.label15);
-            this.gboxGonderici.Controls.Add(this.label12);
             this.gboxGonderici.Controls.Add(this.label5);
-            this.gboxGonderici.Controls.Add(this.cmbGMusteriTipi);
             this.gboxGonderici.Controls.Add(this.cmbGKurumKisi);
             this.gboxGonderici.Location = new System.Drawing.Point(7, 7);
             this.gboxGonderici.Name = "gboxGonderici";
@@ -472,12 +471,13 @@ namespace kargo_takip
             // 
             // mtxtGTcNo
             // 
-            this.mtxtGTcNo.Location = new System.Drawing.Point(114, 219);
+            this.mtxtGTcNo.Location = new System.Drawing.Point(114, 22);
             this.mtxtGTcNo.Mask = "00000000000";
             this.mtxtGTcNo.Name = "mtxtGTcNo";
             this.mtxtGTcNo.Size = new System.Drawing.Size(171, 21);
             this.mtxtGTcNo.TabIndex = 9;
             this.mtxtGTcNo.ValidatingType = typeof(int);
+            this.mtxtGTcNo.TextChanged += new System.EventHandler(this.mtxtGTcNo_TextChanged);
             // 
             // gboxGondericiAdres
             // 
@@ -493,9 +493,9 @@ namespace kargo_takip
             this.gboxGondericiAdres.Controls.Add(this.cmbGIlce);
             this.gboxGondericiAdres.Controls.Add(this.cmbGIl);
             this.gboxGondericiAdres.Controls.Add(this.cmbGUlke);
-            this.gboxGondericiAdres.Location = new System.Drawing.Point(12, 373);
+            this.gboxGondericiAdres.Location = new System.Drawing.Point(12, 350);
             this.gboxGondericiAdres.Name = "gboxGondericiAdres";
-            this.gboxGondericiAdres.Size = new System.Drawing.Size(311, 294);
+            this.gboxGondericiAdres.Size = new System.Drawing.Size(311, 321);
             this.gboxGondericiAdres.TabIndex = 8;
             this.gboxGondericiAdres.TabStop = false;
             this.gboxGondericiAdres.Text = " Adres ";
@@ -503,16 +503,16 @@ namespace kargo_takip
             // rtxtGAdres
             // 
             this.rtxtGAdres.Enabled = false;
-            this.rtxtGAdres.Location = new System.Drawing.Point(103, 181);
+            this.rtxtGAdres.Location = new System.Drawing.Point(103, 188);
             this.rtxtGAdres.Name = "rtxtGAdres";
-            this.rtxtGAdres.Size = new System.Drawing.Size(171, 94);
+            this.rtxtGAdres.Size = new System.Drawing.Size(171, 118);
             this.rtxtGAdres.TabIndex = 19;
             this.rtxtGAdres.Text = "";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 183);
+            this.label4.Location = new System.Drawing.Point(9, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 15;
@@ -521,7 +521,7 @@ namespace kargo_takip
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 122);
+            this.label1.Location = new System.Drawing.Point(36, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 6;
@@ -530,7 +530,7 @@ namespace kargo_takip
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(62, 89);
+            this.label8.Location = new System.Drawing.Point(62, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 16);
             this.label8.TabIndex = 7;
@@ -539,7 +539,7 @@ namespace kargo_takip
             // txtGPostaKodu
             // 
             this.txtGPostaKodu.Enabled = false;
-            this.txtGPostaKodu.Location = new System.Drawing.Point(103, 150);
+            this.txtGPostaKodu.Location = new System.Drawing.Point(103, 156);
             this.txtGPostaKodu.Name = "txtGPostaKodu";
             this.txtGPostaKodu.Size = new System.Drawing.Size(171, 21);
             this.txtGPostaKodu.TabIndex = 6;
@@ -547,7 +547,7 @@ namespace kargo_takip
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 57);
+            this.label7.Location = new System.Drawing.Point(77, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 16);
             this.label7.TabIndex = 12;
@@ -565,7 +565,7 @@ namespace kargo_takip
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(17, 153);
+            this.label32.Location = new System.Drawing.Point(17, 159);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(80, 16);
             this.label32.TabIndex = 1;
@@ -576,30 +576,33 @@ namespace kargo_takip
             this.cmbGMahalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGMahalle.Enabled = false;
             this.cmbGMahalle.FormattingEnabled = true;
-            this.cmbGMahalle.Location = new System.Drawing.Point(103, 118);
+            this.cmbGMahalle.Location = new System.Drawing.Point(103, 123);
             this.cmbGMahalle.Name = "cmbGMahalle";
             this.cmbGMahalle.Size = new System.Drawing.Size(171, 23);
             this.cmbGMahalle.TabIndex = 18;
+            this.cmbGMahalle.SelectedIndexChanged += new System.EventHandler(this.cmbGMahalle_SelectedIndexChanged);
             // 
             // cmbGIlce
             // 
             this.cmbGIlce.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGIlce.Enabled = false;
             this.cmbGIlce.FormattingEnabled = true;
-            this.cmbGIlce.Location = new System.Drawing.Point(103, 85);
+            this.cmbGIlce.Location = new System.Drawing.Point(103, 90);
             this.cmbGIlce.Name = "cmbGIlce";
             this.cmbGIlce.Size = new System.Drawing.Size(171, 23);
             this.cmbGIlce.TabIndex = 17;
+            this.cmbGIlce.SelectedIndexChanged += new System.EventHandler(this.cmbGIlce_SelectedIndexChanged);
             // 
             // cmbGIl
             // 
             this.cmbGIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGIl.Enabled = false;
             this.cmbGIl.FormattingEnabled = true;
-            this.cmbGIl.Location = new System.Drawing.Point(103, 53);
+            this.cmbGIl.Location = new System.Drawing.Point(103, 58);
             this.cmbGIl.Name = "cmbGIl";
             this.cmbGIl.Size = new System.Drawing.Size(171, 23);
             this.cmbGIl.TabIndex = 16;
+            this.cmbGIl.SelectedIndexChanged += new System.EventHandler(this.cmbGIl_SelectedIndexChanged);
             // 
             // cmbGUlke
             // 
@@ -611,41 +614,42 @@ namespace kargo_takip
             this.cmbGUlke.Name = "cmbGUlke";
             this.cmbGUlke.Size = new System.Drawing.Size(171, 23);
             this.cmbGUlke.TabIndex = 14;
+            this.cmbGUlke.SelectedIndexChanged += new System.EventHandler(this.cmbGUlke_SelectedIndexChanged);
             // 
             // mtxtGTelefon
             // 
-            this.mtxtGTelefon.Location = new System.Drawing.Point(115, 312);
-            this.mtxtGTelefon.Mask = "(999) 000-0000";
+            this.mtxtGTelefon.Location = new System.Drawing.Point(115, 285);
+            this.mtxtGTelefon.Mask = "(599) 000-00-00";
             this.mtxtGTelefon.Name = "mtxtGTelefon";
             this.mtxtGTelefon.Size = new System.Drawing.Size(170, 21);
             this.mtxtGTelefon.TabIndex = 7;
             // 
             // txtGEposta
             // 
-            this.txtGEposta.Location = new System.Drawing.Point(114, 343);
+            this.txtGEposta.Location = new System.Drawing.Point(114, 316);
             this.txtGEposta.Name = "txtGEposta";
             this.txtGEposta.Size = new System.Drawing.Size(171, 21);
             this.txtGEposta.TabIndex = 6;
             // 
             // txtGSoyadi
             // 
-            this.txtGSoyadi.Location = new System.Drawing.Point(114, 280);
+            this.txtGSoyadi.Location = new System.Drawing.Point(114, 253);
             this.txtGSoyadi.Name = "txtGSoyadi";
             this.txtGSoyadi.Size = new System.Drawing.Size(171, 21);
             this.txtGSoyadi.TabIndex = 6;
             // 
             // txtGAdi
             // 
-            this.txtGAdi.Location = new System.Drawing.Point(114, 249);
+            this.txtGAdi.Location = new System.Drawing.Point(114, 222);
             this.txtGAdi.Name = "txtGAdi";
             this.txtGAdi.Size = new System.Drawing.Size(171, 21);
             this.txtGAdi.TabIndex = 6;
             // 
             // txtGMusteriNo
             // 
-            this.txtGMusteriNo.BackColor = System.Drawing.Color.White;
+            this.txtGMusteriNo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtGMusteriNo.Enabled = false;
-            this.txtGMusteriNo.Location = new System.Drawing.Point(114, 188);
+            this.txtGMusteriNo.Location = new System.Drawing.Point(114, 192);
             this.txtGMusteriNo.Name = "txtGMusteriNo";
             this.txtGMusteriNo.Size = new System.Drawing.Size(171, 21);
             this.txtGMusteriNo.TabIndex = 6;
@@ -653,7 +657,7 @@ namespace kargo_takip
             // rtxtGKurumDetayi
             // 
             this.rtxtGKurumDetayi.Enabled = false;
-            this.rtxtGKurumDetayi.Location = new System.Drawing.Point(114, 87);
+            this.rtxtGKurumDetayi.Location = new System.Drawing.Point(114, 88);
             this.rtxtGKurumDetayi.Name = "rtxtGKurumDetayi";
             this.rtxtGKurumDetayi.Size = new System.Drawing.Size(171, 94);
             this.rtxtGKurumDetayi.TabIndex = 5;
@@ -662,7 +666,7 @@ namespace kargo_takip
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(51, 346);
+            this.label31.Location = new System.Drawing.Point(51, 319);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(59, 16);
             this.label31.TabIndex = 1;
@@ -671,7 +675,7 @@ namespace kargo_takip
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(23, 90);
+            this.label30.Location = new System.Drawing.Point(23, 91);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(90, 16);
             this.label30.TabIndex = 2;
@@ -680,7 +684,7 @@ namespace kargo_takip
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(51, 315);
+            this.label23.Location = new System.Drawing.Point(51, 288);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(60, 16);
             this.label23.TabIndex = 1;
@@ -689,7 +693,7 @@ namespace kargo_takip
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(78, 253);
+            this.label22.Location = new System.Drawing.Point(78, 226);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(31, 16);
             this.label22.TabIndex = 1;
@@ -698,7 +702,7 @@ namespace kargo_takip
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(58, 284);
+            this.label21.Location = new System.Drawing.Point(58, 257);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(54, 16);
             this.label21.TabIndex = 1;
@@ -707,7 +711,7 @@ namespace kargo_takip
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(52, 223);
+            this.label18.Location = new System.Drawing.Point(52, 26);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(56, 16);
             this.label18.TabIndex = 1;
@@ -716,42 +720,20 @@ namespace kargo_takip
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(36, 192);
+            this.label15.Location = new System.Drawing.Point(36, 196);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 16);
             this.label15.TabIndex = 1;
             this.label15.Text = "Müşteri No:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(34, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 16);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Müşteri Tipi:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 25);
+            this.label5.Location = new System.Drawing.Point(31, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Kişi / Kurum:";
-            // 
-            // cmbGMusteriTipi
-            // 
-            this.cmbGMusteriTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGMusteriTipi.Enabled = false;
-            this.cmbGMusteriTipi.FormattingEnabled = true;
-            this.cmbGMusteriTipi.Items.AddRange(new object[] {
-            "Mevcut Müşteri",
-            "Yeni Müşteri"});
-            this.cmbGMusteriTipi.Location = new System.Drawing.Point(114, 54);
-            this.cmbGMusteriTipi.Name = "cmbGMusteriTipi";
-            this.cmbGMusteriTipi.Size = new System.Drawing.Size(171, 23);
-            this.cmbGMusteriTipi.TabIndex = 1;
             // 
             // cmbGKurumKisi
             // 
@@ -760,10 +742,11 @@ namespace kargo_takip
             this.cmbGKurumKisi.Items.AddRange(new object[] {
             "Kurum / Kuruluş",
             "Şahsi / Kişisel"});
-            this.cmbGKurumKisi.Location = new System.Drawing.Point(114, 22);
+            this.cmbGKurumKisi.Location = new System.Drawing.Point(115, 54);
             this.cmbGKurumKisi.Name = "cmbGKurumKisi";
             this.cmbGKurumKisi.Size = new System.Drawing.Size(171, 23);
             this.cmbGKurumKisi.TabIndex = 1;
+            this.cmbGKurumKisi.SelectedIndexChanged += new System.EventHandler(this.cmbGKurumKisi_SelectedIndexChanged);
             // 
             // tabControl1
             // 
@@ -795,50 +778,76 @@ namespace kargo_takip
             // gboxKargoImg
             // 
             this.gboxKargoImg.Controls.Add(this.picbKargoImg);
-            this.gboxKargoImg.Location = new System.Drawing.Point(695, 380);
+            this.gboxKargoImg.Location = new System.Drawing.Point(694, 426);
             this.gboxKargoImg.Name = "gboxKargoImg";
-            this.gboxKargoImg.Size = new System.Drawing.Size(320, 314);
+            this.gboxKargoImg.Size = new System.Drawing.Size(320, 262);
             this.gboxKargoImg.TabIndex = 9;
             this.gboxKargoImg.TabStop = false;
             // 
             // picbKargoImg
             // 
             this.picbKargoImg.Image = global::kargo_takip.Properties.Resources.kargo_entegrasyonu;
-            this.picbKargoImg.Location = new System.Drawing.Point(7, 15);
+            this.picbKargoImg.Location = new System.Drawing.Point(7, 14);
             this.picbKargoImg.Name = "picbKargoImg";
-            this.picbKargoImg.Size = new System.Drawing.Size(306, 292);
+            this.picbKargoImg.Size = new System.Drawing.Size(306, 240);
             this.picbKargoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbKargoImg.TabIndex = 8;
             this.picbKargoImg.TabStop = false;
             // 
             // gboxIslemler
             // 
+            this.gboxIslemler.Controls.Add(this.btnKargoTemizle);
+            this.gboxIslemler.Controls.Add(this.btnKargoSil);
             this.gboxIslemler.Controls.Add(this.btnKargoGuncelle);
             this.gboxIslemler.Controls.Add(this.btnKargoKaydet);
             this.gboxIslemler.Location = new System.Drawing.Point(695, 279);
             this.gboxIslemler.Name = "gboxIslemler";
-            this.gboxIslemler.Size = new System.Drawing.Size(320, 98);
+            this.gboxIslemler.Size = new System.Drawing.Size(320, 146);
             this.gboxIslemler.TabIndex = 8;
             this.gboxIslemler.TabStop = false;
             this.gboxIslemler.Text = " İşlemler";
             // 
+            // btnKargoTemizle
+            // 
+            this.btnKargoTemizle.Location = new System.Drawing.Point(171, 82);
+            this.btnKargoTemizle.Name = "btnKargoTemizle";
+            this.btnKargoTemizle.Size = new System.Drawing.Size(122, 46);
+            this.btnKargoTemizle.TabIndex = 0;
+            this.btnKargoTemizle.Text = "🗑️ TEMİZLE";
+            this.btnKargoTemizle.UseVisualStyleBackColor = true;
+            this.btnKargoTemizle.Click += new System.EventHandler(this.btnKargoTemizle_Click);
+            // 
+            // btnKargoSil
+            // 
+            this.btnKargoSil.Enabled = false;
+            this.btnKargoSil.Location = new System.Drawing.Point(44, 82);
+            this.btnKargoSil.Name = "btnKargoSil";
+            this.btnKargoSil.Size = new System.Drawing.Size(121, 46);
+            this.btnKargoSil.TabIndex = 0;
+            this.btnKargoSil.Text = "🗑️ SİL";
+            this.btnKargoSil.UseVisualStyleBackColor = true;
+            this.btnKargoSil.Click += new System.EventHandler(this.btnKargoSil_Click);
+            // 
             // btnKargoGuncelle
             // 
-            this.btnKargoGuncelle.Location = new System.Drawing.Point(167, 31);
+            this.btnKargoGuncelle.Enabled = false;
+            this.btnKargoGuncelle.Location = new System.Drawing.Point(171, 29);
             this.btnKargoGuncelle.Name = "btnKargoGuncelle";
-            this.btnKargoGuncelle.Size = new System.Drawing.Size(115, 46);
+            this.btnKargoGuncelle.Size = new System.Drawing.Size(122, 46);
             this.btnKargoGuncelle.TabIndex = 0;
             this.btnKargoGuncelle.Text = "📁 GÜNCELLE";
             this.btnKargoGuncelle.UseVisualStyleBackColor = true;
+            this.btnKargoGuncelle.Click += new System.EventHandler(this.btnKargoGuncelle_Click);
             // 
             // btnKargoKaydet
             // 
-            this.btnKargoKaydet.Location = new System.Drawing.Point(40, 31);
+            this.btnKargoKaydet.Location = new System.Drawing.Point(44, 29);
             this.btnKargoKaydet.Name = "btnKargoKaydet";
-            this.btnKargoKaydet.Size = new System.Drawing.Size(115, 46);
+            this.btnKargoKaydet.Size = new System.Drawing.Size(121, 46);
             this.btnKargoKaydet.TabIndex = 0;
             this.btnKargoKaydet.Text = "💾 KAYDET";
             this.btnKargoKaydet.UseVisualStyleBackColor = true;
+            this.btnKargoKaydet.Click += new System.EventHandler(this.btnKargoKaydet_Click);
             // 
             // gboxAlici
             // 
@@ -857,9 +866,7 @@ namespace kargo_takip
             this.gboxAlici.Controls.Add(this.label48);
             this.gboxAlici.Controls.Add(this.label52);
             this.gboxAlici.Controls.Add(this.label53);
-            this.gboxAlici.Controls.Add(this.label54);
             this.gboxAlici.Controls.Add(this.label55);
-            this.gboxAlici.Controls.Add(this.cmbAMusteriTipi);
             this.gboxAlici.Controls.Add(this.cmbAKurumKisi);
             this.gboxAlici.Location = new System.Drawing.Point(351, 7);
             this.gboxAlici.Name = "gboxAlici";
@@ -870,12 +877,13 @@ namespace kargo_takip
             // 
             // mtxtATcNo
             // 
-            this.mtxtATcNo.Location = new System.Drawing.Point(115, 219);
+            this.mtxtATcNo.Location = new System.Drawing.Point(115, 22);
             this.mtxtATcNo.Mask = "00000000000";
             this.mtxtATcNo.Name = "mtxtATcNo";
             this.mtxtATcNo.Size = new System.Drawing.Size(171, 21);
             this.mtxtATcNo.TabIndex = 9;
             this.mtxtATcNo.ValidatingType = typeof(int);
+            this.mtxtATcNo.TextChanged += new System.EventHandler(this.mtxtATcNo_TextChanged);
             // 
             // gboxAliciAdres
             // 
@@ -891,9 +899,9 @@ namespace kargo_takip
             this.gboxAliciAdres.Controls.Add(this.cmbAIlce);
             this.gboxAliciAdres.Controls.Add(this.cmbAIl);
             this.gboxAliciAdres.Controls.Add(this.cmbAUlke);
-            this.gboxAliciAdres.Location = new System.Drawing.Point(12, 373);
+            this.gboxAliciAdres.Location = new System.Drawing.Point(13, 350);
             this.gboxAliciAdres.Name = "gboxAliciAdres";
-            this.gboxAliciAdres.Size = new System.Drawing.Size(311, 294);
+            this.gboxAliciAdres.Size = new System.Drawing.Size(311, 321);
             this.gboxAliciAdres.TabIndex = 8;
             this.gboxAliciAdres.TabStop = false;
             this.gboxAliciAdres.Text = " Adres ";
@@ -901,16 +909,16 @@ namespace kargo_takip
             // rtxtAAdres
             // 
             this.rtxtAAdres.Enabled = false;
-            this.rtxtAAdres.Location = new System.Drawing.Point(103, 181);
+            this.rtxtAAdres.Location = new System.Drawing.Point(102, 187);
             this.rtxtAAdres.Name = "rtxtAAdres";
-            this.rtxtAAdres.Size = new System.Drawing.Size(171, 94);
+            this.rtxtAAdres.Size = new System.Drawing.Size(171, 119);
             this.rtxtAAdres.TabIndex = 19;
             this.rtxtAAdres.Text = "";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(9, 183);
+            this.label34.Location = new System.Drawing.Point(8, 190);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(92, 16);
             this.label34.TabIndex = 15;
@@ -919,7 +927,7 @@ namespace kargo_takip
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(36, 122);
+            this.label35.Location = new System.Drawing.Point(36, 125);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(62, 16);
             this.label35.TabIndex = 6;
@@ -928,7 +936,7 @@ namespace kargo_takip
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(62, 89);
+            this.label36.Location = new System.Drawing.Point(62, 91);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(32, 16);
             this.label36.TabIndex = 7;
@@ -937,7 +945,7 @@ namespace kargo_takip
             // txtAPostaKodu
             // 
             this.txtAPostaKodu.Enabled = false;
-            this.txtAPostaKodu.Location = new System.Drawing.Point(103, 150);
+            this.txtAPostaKodu.Location = new System.Drawing.Point(102, 153);
             this.txtAPostaKodu.Name = "txtAPostaKodu";
             this.txtAPostaKodu.Size = new System.Drawing.Size(171, 21);
             this.txtAPostaKodu.TabIndex = 6;
@@ -945,7 +953,7 @@ namespace kargo_takip
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(77, 57);
+            this.label41.Location = new System.Drawing.Point(77, 59);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(17, 16);
             this.label41.TabIndex = 12;
@@ -963,7 +971,7 @@ namespace kargo_takip
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(17, 153);
+            this.label43.Location = new System.Drawing.Point(16, 156);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(80, 16);
             this.label43.TabIndex = 1;
@@ -974,7 +982,7 @@ namespace kargo_takip
             this.cmbAMahalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAMahalle.Enabled = false;
             this.cmbAMahalle.FormattingEnabled = true;
-            this.cmbAMahalle.Location = new System.Drawing.Point(103, 118);
+            this.cmbAMahalle.Location = new System.Drawing.Point(103, 121);
             this.cmbAMahalle.Name = "cmbAMahalle";
             this.cmbAMahalle.Size = new System.Drawing.Size(171, 23);
             this.cmbAMahalle.TabIndex = 18;
@@ -984,7 +992,7 @@ namespace kargo_takip
             this.cmbAIlce.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAIlce.Enabled = false;
             this.cmbAIlce.FormattingEnabled = true;
-            this.cmbAIlce.Location = new System.Drawing.Point(103, 85);
+            this.cmbAIlce.Location = new System.Drawing.Point(103, 87);
             this.cmbAIlce.Name = "cmbAIlce";
             this.cmbAIlce.Size = new System.Drawing.Size(171, 23);
             this.cmbAIlce.TabIndex = 17;
@@ -994,7 +1002,7 @@ namespace kargo_takip
             this.cmbAIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAIl.Enabled = false;
             this.cmbAIl.FormattingEnabled = true;
-            this.cmbAIl.Location = new System.Drawing.Point(103, 53);
+            this.cmbAIl.Location = new System.Drawing.Point(103, 55);
             this.cmbAIl.Name = "cmbAIl";
             this.cmbAIl.Size = new System.Drawing.Size(171, 23);
             this.cmbAIl.TabIndex = 16;
@@ -1012,38 +1020,38 @@ namespace kargo_takip
             // 
             // mtxtATelefon
             // 
-            this.mtxtATelefon.Location = new System.Drawing.Point(115, 312);
-            this.mtxtATelefon.Mask = "(999) 000-0000";
+            this.mtxtATelefon.Location = new System.Drawing.Point(116, 289);
+            this.mtxtATelefon.Mask = "(599) 000-00-00";
             this.mtxtATelefon.Name = "mtxtATelefon";
             this.mtxtATelefon.Size = new System.Drawing.Size(170, 21);
             this.mtxtATelefon.TabIndex = 7;
             // 
             // txtAEposta
             // 
-            this.txtAEposta.Location = new System.Drawing.Point(114, 343);
+            this.txtAEposta.Location = new System.Drawing.Point(115, 320);
             this.txtAEposta.Name = "txtAEposta";
             this.txtAEposta.Size = new System.Drawing.Size(171, 21);
             this.txtAEposta.TabIndex = 6;
             // 
             // txtASoyadi
             // 
-            this.txtASoyadi.Location = new System.Drawing.Point(114, 280);
+            this.txtASoyadi.Location = new System.Drawing.Point(115, 257);
             this.txtASoyadi.Name = "txtASoyadi";
             this.txtASoyadi.Size = new System.Drawing.Size(171, 21);
             this.txtASoyadi.TabIndex = 6;
             // 
             // txtAAdi
             // 
-            this.txtAAdi.Location = new System.Drawing.Point(114, 249);
+            this.txtAAdi.Location = new System.Drawing.Point(115, 226);
             this.txtAAdi.Name = "txtAAdi";
             this.txtAAdi.Size = new System.Drawing.Size(171, 21);
             this.txtAAdi.TabIndex = 6;
             // 
             // txtAMusteriNo
             // 
-            this.txtAMusteriNo.BackColor = System.Drawing.Color.White;
+            this.txtAMusteriNo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtAMusteriNo.Enabled = false;
-            this.txtAMusteriNo.Location = new System.Drawing.Point(114, 188);
+            this.txtAMusteriNo.Location = new System.Drawing.Point(115, 194);
             this.txtAMusteriNo.Name = "txtAMusteriNo";
             this.txtAMusteriNo.Size = new System.Drawing.Size(171, 21);
             this.txtAMusteriNo.TabIndex = 6;
@@ -1051,7 +1059,7 @@ namespace kargo_takip
             // rtxtAKurumDetayi
             // 
             this.rtxtAKurumDetayi.Enabled = false;
-            this.rtxtAKurumDetayi.Location = new System.Drawing.Point(114, 87);
+            this.rtxtAKurumDetayi.Location = new System.Drawing.Point(115, 89);
             this.rtxtAKurumDetayi.Name = "rtxtAKurumDetayi";
             this.rtxtAKurumDetayi.Size = new System.Drawing.Size(171, 94);
             this.rtxtAKurumDetayi.TabIndex = 5;
@@ -1060,7 +1068,7 @@ namespace kargo_takip
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(51, 346);
+            this.label44.Location = new System.Drawing.Point(52, 323);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(59, 16);
             this.label44.TabIndex = 1;
@@ -1069,7 +1077,7 @@ namespace kargo_takip
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(23, 90);
+            this.label45.Location = new System.Drawing.Point(24, 92);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(90, 16);
             this.label45.TabIndex = 2;
@@ -1078,7 +1086,7 @@ namespace kargo_takip
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(51, 315);
+            this.label46.Location = new System.Drawing.Point(52, 292);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(60, 16);
             this.label46.TabIndex = 1;
@@ -1087,7 +1095,7 @@ namespace kargo_takip
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(78, 253);
+            this.label47.Location = new System.Drawing.Point(79, 230);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(31, 16);
             this.label47.TabIndex = 1;
@@ -1096,7 +1104,7 @@ namespace kargo_takip
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(58, 284);
+            this.label48.Location = new System.Drawing.Point(59, 261);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(54, 16);
             this.label48.TabIndex = 1;
@@ -1105,7 +1113,7 @@ namespace kargo_takip
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(52, 223);
+            this.label52.Location = new System.Drawing.Point(52, 26);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(56, 16);
             this.label52.TabIndex = 1;
@@ -1114,42 +1122,20 @@ namespace kargo_takip
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(36, 192);
+            this.label53.Location = new System.Drawing.Point(37, 198);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(75, 16);
             this.label53.TabIndex = 1;
             this.label53.Text = "Müşteri No:";
             // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(34, 58);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(80, 16);
-            this.label54.TabIndex = 1;
-            this.label54.Text = "Müşteri Tipi:";
-            // 
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(30, 25);
+            this.label55.Location = new System.Drawing.Point(31, 58);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(79, 16);
             this.label55.TabIndex = 1;
             this.label55.Text = "Kişi / Kurum:";
-            // 
-            // cmbAMusteriTipi
-            // 
-            this.cmbAMusteriTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAMusteriTipi.Enabled = false;
-            this.cmbAMusteriTipi.FormattingEnabled = true;
-            this.cmbAMusteriTipi.Items.AddRange(new object[] {
-            "Mevcut Müşteri",
-            "Yeni Müşteri"});
-            this.cmbAMusteriTipi.Location = new System.Drawing.Point(114, 54);
-            this.cmbAMusteriTipi.Name = "cmbAMusteriTipi";
-            this.cmbAMusteriTipi.Size = new System.Drawing.Size(171, 23);
-            this.cmbAMusteriTipi.TabIndex = 1;
             // 
             // cmbAKurumKisi
             // 
@@ -1158,7 +1144,7 @@ namespace kargo_takip
             this.cmbAKurumKisi.Items.AddRange(new object[] {
             "Kurum / Kuruluş",
             "Şahsi / Kişisel"});
-            this.cmbAKurumKisi.Location = new System.Drawing.Point(114, 22);
+            this.cmbAKurumKisi.Location = new System.Drawing.Point(115, 55);
             this.cmbAKurumKisi.Name = "cmbAKurumKisi";
             this.cmbAKurumKisi.Size = new System.Drawing.Size(171, 23);
             this.cmbAKurumKisi.TabIndex = 1;
@@ -1843,6 +1829,45 @@ namespace kargo_takip
             this.label69.TabIndex = 2;
             this.label69.Text = "Adı:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pdfCiktiAl);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 314);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(273, 378);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = " Çıktı ";
+            // 
+            // pdfCiktiAl
+            // 
+            this.pdfCiktiAl.Enabled = true;
+            this.pdfCiktiAl.Location = new System.Drawing.Point(6, 21);
+            this.pdfCiktiAl.Name = "pdfCiktiAl";
+            this.pdfCiktiAl.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfCiktiAl.OcxState")));
+            this.pdfCiktiAl.Size = new System.Drawing.Size(261, 306);
+            this.pdfCiktiAl.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(139, 334);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 38);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "📜 TÜM ÇIKTIYI AL";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 38);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "📜 TEK ÇIKTI AL";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.mtxtTcNo);
@@ -2078,44 +2103,9 @@ namespace kargo_takip
             this.cmbBasCalistir.Text = "Başlangıçta Çalıştır";
             this.cmbBasCalistir.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // hataMesaji
             // 
-            this.groupBox1.Controls.Add(this.pdfCiktiAl);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 314);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 378);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = " Çıktı ";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "📜 TEK ÇIKTI AL";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pdfCiktiAl
-            // 
-            this.pdfCiktiAl.Enabled = true;
-            this.pdfCiktiAl.Location = new System.Drawing.Point(6, 21);
-            this.pdfCiktiAl.Name = "pdfCiktiAl";
-            this.pdfCiktiAl.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfCiktiAl.OcxState")));
-            this.pdfCiktiAl.Size = new System.Drawing.Size(261, 306);
-            this.pdfCiktiAl.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(139, 334);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 38);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "📜 TÜM ÇIKTIYI AL";
-            this.button2.UseVisualStyleBackColor = true;
+            this.hataMesaji.ContainerControl = this;
             // 
             // frmKargo
             // 
@@ -2130,6 +2120,7 @@ namespace kargo_takip
             this.MinimumSize = new System.Drawing.Size(1057, 775);
             this.Name = "frmKargo";
             this.Text = "Kargo Takip Programı - v1.1.0";
+            this.Load += new System.EventHandler(this.frmKargo_Load);
             this.gboxOzet.ResumeLayout(false);
             this.gboxOzet.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -2163,14 +2154,15 @@ namespace kargo_takip
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pdfCiktiAl)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.tabAyarlar.ResumeLayout(false);
             this.groupBox19.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pdfCiktiAl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hataMesaji)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2201,8 +2193,6 @@ namespace kargo_takip
         private System.Windows.Forms.ComboBox cmbGKurumKisi;
         private System.Windows.Forms.TextBox txtGMusteriNo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmbGMusteriTipi;
         private System.Windows.Forms.TextBox txtGSoyadi;
         private System.Windows.Forms.TextBox txtGAdi;
         private System.Windows.Forms.Label label23;
@@ -2288,9 +2278,7 @@ namespace kargo_takip
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.ComboBox cmbAMusteriTipi;
         private System.Windows.Forms.ComboBox cmbAKurumKisi;
         private System.Windows.Forms.Label lblOzetGAlAdet;
         private System.Windows.Forms.Label label77;
@@ -2362,5 +2350,8 @@ namespace kargo_takip
         private System.Windows.Forms.Button button1;
         private AxAcroPDFLib.AxAcroPDF pdfCiktiAl;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider hataMesaji;
+        private System.Windows.Forms.Button btnKargoTemizle;
+        private System.Windows.Forms.Button btnKargoSil;
     }
 }

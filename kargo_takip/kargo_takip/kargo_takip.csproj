@@ -64,12 +64,6 @@
     <Compile Include="frmKoli.Designer.cs">
       <DependentUpon>frmKoli.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMusteri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMusteri.Designer.cs">
-      <DependentUpon>frmMusteri.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSifre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,9 +87,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKoli.resx">
       <DependentUpon>frmKoli.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMusteri.resx">
-      <DependentUpon>frmMusteri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSifre.resx">
       <DependentUpon>frmSifre.cs</DependentUpon>

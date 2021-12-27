@@ -16,5 +16,10 @@ namespace kargo_takip
         {
             InitializeComponent();
         }
+
+        private void frmZarf_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,105 @@ namespace kargo_takip
         {
             InitializeComponent();
         }
+
+        private void frmKargo_Load(object sender, EventArgs e)
+        {
+            // TODO: daha sonradan pasif et
+            mtxtGTcNo.Text = "1327650282";
+            mtxtATcNo.Text = "2030226870";
+        }
+
+        #region A1: GroupBox'lar:
+
+        #region 01: Gönderici
+        private void mtxtGTcNo_TextChanged(object sender, EventArgs e)
+        {
+            Global global = new Global();
+            global.sorgu = "SELECT * FROM musteriler WHERE durum = 1";
+            global.tc_cek = mtxtGTcNo.Text;
+            global.tcKontrol(hataMesaji, mtxtGTcNo, true);
+
+            if (global.tc_cek == global.db_tc)
+            {
+                cmbGKurumKisi.SelectedIndex = global.mus_kurum_kisi;
+                rtxtGKurumDetayi.Text = global.mus_kurum_detay;
+                txtGMusteriNo.Text = global.mus_no;
+                txtGAdi.Text = global.mus_ad;
+                txtGSoyadi.Text = global.mus_soyad;
+                mtxtGTelefon.Text = global.mus_tel;
+                txtGEposta.Text = global.mus_eposta;
+            }
+        }
+        private void cmbGKurumKisi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbGKurumKisi.SelectedIndex == 0)
+                rtxtGKurumDetayi.Enabled = true;
+            else
+                rtxtGKurumDetayi.Enabled = false;
+        }
+        private void cmbGUlke_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbGIl.Enabled = true;
+        }
+
+        private void cmbGIl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbGIlce.Enabled = true;
+        }
+
+        private void cmbGIlce_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbGMahalle.Enabled = true;
+        }
+
+        private void cmbGMahalle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtGPostaKodu.Enabled = true;
+            rtxtGAdres.Enabled = true;
+        }
+        #endregion
+
+        #region 02: Alıcı
+        private void mtxtATcNo_TextChanged(object sender, EventArgs e)
+        {
+            Global global = new Global();
+            global.sorgu = "SELECT * FROM musteriler WHERE durum = 1";
+            global.tc_cek = mtxtATcNo.Text;
+            global.tcKontrol(hataMesaji, mtxtATcNo, false);
+
+            if (global.tc_cek == global.db_tc)
+            {
+                cmbAKurumKisi.SelectedIndex = global.mus_kurum_kisi;
+                rtxtAKurumDetayi.Text = global.mus_kurum_detay;
+                txtAMusteriNo.Text = global.mus_no;
+                txtAAdi.Text = global.mus_ad;
+                txtASoyadi.Text = global.mus_soyad;
+                mtxtATelefon.Text = global.mus_tel;
+                txtAEposta.Text = global.mus_eposta;
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region A2: Button'lar:
+        private void btnKargoKaydet_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnKargoGuncelle_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnKargoSil_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnKargoTemizle_Click(object sender, EventArgs e)
+        {
+            Global global = new Global();
+            global.frmTemizle(this);
+        }
+        #endregion
     }
 }

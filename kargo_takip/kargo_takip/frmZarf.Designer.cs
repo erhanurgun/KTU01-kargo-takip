@@ -457,6 +457,7 @@ namespace kargo_takip
             this.MinimumSize = new System.Drawing.Size(707, 387);
             this.Name = "frmZarf";
             this.Text = "Dosya / Evrak ( 0 - 500gr )";
+            this.Load += new System.EventHandler(this.frmZarf_Load);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);

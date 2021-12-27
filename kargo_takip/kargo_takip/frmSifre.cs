@@ -28,7 +28,6 @@ namespace kargo_takip
         {
             Global global = new Global
             {
-                yol = @"Data Source=PCI-ACER\SQLSERVEREXP;Initial Catalog=kargo_takip;Integrated Security=True",
                 sorgu = "SELECT * FROM personeller WHERE durum = 1",
                 txt_email = txtEposta.Text
             };
