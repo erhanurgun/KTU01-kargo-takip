@@ -229,6 +229,28 @@ namespace kargo_takip
 
         private void cmbKargoTipi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            frmZarf zarf = new frmZarf();
+            frmKoli koli = new frmKoli();
+
+            if (cmbKargoTipi.SelectedIndex == 0)
+            {
+                zarf.ShowDialog();
+                lblKargoTasima.Text = zarf.tasima_bedeli.ToString("0.##");
+                lblKargoEkHiz.Text = zarf.ek_hizmet.ToString("0.##");
+                lblKargoToplam.Text = zarf.toplam.ToString("0.##");
+                lblKargoKdv.Text = zarf.kdv.ToString("0.##");
+                lblKargoGenelTop.Text = zarf.genel_toplam.ToString("0.##");
+            }
+            else if (cmbKargoTipi.SelectedIndex == 1)
+            {
+                koli.ShowDialog();
+                //lblKargoTasima.Text = koli.tasima_bedeli.ToString("0.##");
+                //lblKargoEkHiz.Text = koli.ek_hizmet.ToString("0.##");
+                //lblKargoToplam.Text = koli.toplam.ToString("0.##");
+                //lblKargoKdv.Text = koli.kdv.ToString("0.##");
+                //lblKargoGenelTop.Text = koli.genel_toplam.ToString("0.##");
+            }
+
             
         }
     }

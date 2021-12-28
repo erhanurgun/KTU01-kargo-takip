@@ -14,7 +14,7 @@ namespace kargo_takip
 {
     class Global
     {
-        #region hataSatiriniBul(Exception ex):
+        #region void: hataSatiriniBul():
         public int hataSatiriniBul(Exception ex)
         {
             var satir_no = 0;
@@ -173,8 +173,6 @@ namespace kargo_takip
         #region 01: frmTemizle()
         public void frmTemizle(Control ctrl)
         {
-            string baslik = "Onaylama";
-            string mesaj = "Temizleme işlemini onaylıyor musunuz?";
             foreach (Control c in ctrl.Controls)
             {
                 if (typeof(TextBox) == c.GetType())
@@ -270,24 +268,22 @@ namespace kargo_takip
         #endregion
 
         #region 04: desiAl()
-        public double en, boy, yukseklik, agirlik;
+        public double koli_en, koli_boy, koli_yukseklik, koli_agirlik;
         public double top_agirlik, top_desi, top_es_agirlik, desi;
         public void desiAl()
         {
-            desi = (en * boy * yukseklik) / 3000;
-            top_agirlik += agirlik;
+            desi = (koli_en * koli_boy * koli_yukseklik) / 3000;
+            top_agirlik += koli_agirlik;
             top_desi += desi;
 
-            if (desi > agirlik)
+            if (desi > koli_agirlik)
                 top_es_agirlik += desi;
             else
-                top_es_agirlik += agirlik;
+                top_es_agirlik += koli_agirlik;
         }
         #endregion
 
         #region 05: beniHatirla()
-
-        
         public void beniHatirla()
         {
             if (chb.Checked)
@@ -304,9 +300,9 @@ namespace kargo_takip
             }
             Ayarlar.Default.Save();
         }
-
         #endregion
 
         #endregion
+
     }
 }

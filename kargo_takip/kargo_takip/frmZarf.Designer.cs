@@ -103,6 +103,7 @@ namespace kargo_takip
             this.cmbZarfAdetSayisi.Name = "cmbZarfAdetSayisi";
             this.cmbZarfAdetSayisi.Size = new System.Drawing.Size(56, 24);
             this.cmbZarfAdetSayisi.TabIndex = 7;
+            this.cmbZarfAdetSayisi.SelectedIndexChanged += new System.EventHandler(this.cmbZarfAdetSayisi_SelectedIndexChanged);
             // 
             // btnDevamZarf
             // 
@@ -112,6 +113,7 @@ namespace kargo_takip
             this.btnDevamZarf.TabIndex = 8;
             this.btnDevamZarf.Text = "➡️ DEVAM ET";
             this.btnDevamZarf.UseVisualStyleBackColor = true;
+            this.btnDevamZarf.Click += new System.EventHandler(this.btnDevamZarf_Click);
             // 
             // groupBox4
             // 
@@ -306,6 +308,7 @@ namespace kargo_takip
             this.chbZarfMesajBilgi.TabIndex = 6;
             this.chbZarfMesajBilgi.Text = "Teslim Bilgi Hizmeti";
             this.chbZarfMesajBilgi.UseVisualStyleBackColor = true;
+            this.chbZarfMesajBilgi.CheckedChanged += new System.EventHandler(this.chbZarfMesajBilgi_CheckedChanged);
             // 
             // lblMesajBilgi
             // 
@@ -367,6 +370,7 @@ namespace kargo_takip
             this.rbtnZarfTeslimSube.TabIndex = 4;
             this.rbtnZarfTeslimSube.Text = "Şubeye Çağrı Hiz.";
             this.rbtnZarfTeslimSube.UseVisualStyleBackColor = true;
+            this.rbtnZarfTeslimSube.CheckedChanged += new System.EventHandler(this.rbtnZarfTeslimSube_CheckedChanged);
             // 
             // rbtnZarfTeslimTel
             // 
@@ -377,6 +381,7 @@ namespace kargo_takip
             this.rbtnZarfTeslimTel.TabIndex = 5;
             this.rbtnZarfTeslimTel.Text = "Telefon İhbarlı";
             this.rbtnZarfTeslimTel.UseVisualStyleBackColor = true;
+            this.rbtnZarfTeslimTel.CheckedChanged += new System.EventHandler(this.rbtnZarfTeslimTel_CheckedChanged);
             // 
             // rbtnZarfTeslimAdres
             // 
@@ -387,6 +392,7 @@ namespace kargo_takip
             this.rbtnZarfTeslimAdres.TabIndex = 3;
             this.rbtnZarfTeslimAdres.Text = "Adres Teslim";
             this.rbtnZarfTeslimAdres.UseVisualStyleBackColor = true;
+            this.rbtnZarfTeslimAdres.CheckedChanged += new System.EventHandler(this.rbtnZarfTeslimAdres_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -428,6 +434,7 @@ namespace kargo_takip
             this.rbtnZarfAlimSube.TabIndex = 2;
             this.rbtnZarfAlimSube.Text = "Şubeye Teslim";
             this.rbtnZarfAlimSube.UseVisualStyleBackColor = true;
+            this.rbtnZarfAlimSube.CheckedChanged += new System.EventHandler(this.rbtnZarfAlimSube_CheckedChanged);
             // 
             // rbtnZarfAlimAdres
             // 
@@ -438,6 +445,7 @@ namespace kargo_takip
             this.rbtnZarfAlimAdres.TabIndex = 1;
             this.rbtnZarfAlimAdres.Text = "Adres Alım";
             this.rbtnZarfAlimAdres.UseVisualStyleBackColor = true;
+            this.rbtnZarfAlimAdres.CheckedChanged += new System.EventHandler(this.rbtnZarfAlimAdres_CheckedChanged);
             // 
             // frmZarf
             // 
