@@ -20,8 +20,9 @@ namespace kargo_takip
 
         private void frmGiris_Load(object sender, EventArgs e)
         {
-            txtKadi.Text = "erhanurgun";
-            txtSifre.Text = "jiyan123";
+            txtKadi.Text = Ayarlar.Default.kul_adi;
+            txtSifre.Text = Ayarlar.Default.kul_sifre;
+            chbBeniHatirla.Checked = Ayarlar.Default.beni_hatirla;
         }
 
         private void btnGiris_Click(object sender, EventArgs e)
@@ -32,6 +33,8 @@ namespace kargo_takip
                 txt_kadi = txtKadi.Text,
                 txt_sifre = txtSifre.Text
             };
+            global.chb = chbBeniHatirla;
+            global.beniHatirla();
             global.dbBaglan(1);
         }
 

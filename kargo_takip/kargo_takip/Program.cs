@@ -16,7 +16,7 @@ namespace kargo_takip
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmKargo());
+            Application.Run(new frmGiris());
         }
     }
 }

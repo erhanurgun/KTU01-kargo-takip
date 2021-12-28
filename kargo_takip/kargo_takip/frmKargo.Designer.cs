@@ -282,6 +282,7 @@ namespace kargo_takip
             this.cmbKargoTipi.Name = "cmbKargoTipi";
             this.cmbKargoTipi.Size = new System.Drawing.Size(171, 23);
             this.cmbKargoTipi.TabIndex = 6;
+            this.cmbKargoTipi.SelectedIndexChanged += new System.EventHandler(this.cmbKargoTipi_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -786,7 +787,7 @@ namespace kargo_takip
             // 
             // picbKargoImg
             // 
-            this.picbKargoImg.Image = global::kargo_takip.Properties.Resources.kargo_entegrasyonu;
+            this.picbKargoImg.Image = ((System.Drawing.Image)(resources.GetObject("picbKargoImg.Image")));
             this.picbKargoImg.Location = new System.Drawing.Point(7, 14);
             this.picbKargoImg.Name = "picbKargoImg";
             this.picbKargoImg.Size = new System.Drawing.Size(306, 240);
@@ -986,6 +987,7 @@ namespace kargo_takip
             this.cmbAMahalle.Name = "cmbAMahalle";
             this.cmbAMahalle.Size = new System.Drawing.Size(171, 23);
             this.cmbAMahalle.TabIndex = 18;
+            this.cmbAMahalle.SelectedIndexChanged += new System.EventHandler(this.cmbAMahalle_SelectedIndexChanged);
             // 
             // cmbAIlce
             // 
@@ -996,6 +998,7 @@ namespace kargo_takip
             this.cmbAIlce.Name = "cmbAIlce";
             this.cmbAIlce.Size = new System.Drawing.Size(171, 23);
             this.cmbAIlce.TabIndex = 17;
+            this.cmbAIlce.SelectedIndexChanged += new System.EventHandler(this.cmbAIlce_SelectedIndexChanged);
             // 
             // cmbAIl
             // 
@@ -1006,6 +1009,7 @@ namespace kargo_takip
             this.cmbAIl.Name = "cmbAIl";
             this.cmbAIl.Size = new System.Drawing.Size(171, 23);
             this.cmbAIl.TabIndex = 16;
+            this.cmbAIl.SelectedIndexChanged += new System.EventHandler(this.cmbAIl_SelectedIndexChanged);
             // 
             // cmbAUlke
             // 
@@ -1017,6 +1021,7 @@ namespace kargo_takip
             this.cmbAUlke.Name = "cmbAUlke";
             this.cmbAUlke.Size = new System.Drawing.Size(171, 23);
             this.cmbAUlke.TabIndex = 14;
+            this.cmbAUlke.SelectedIndexChanged += new System.EventHandler(this.cmbAUlke_SelectedIndexChanged);
             // 
             // mtxtATelefon
             // 
@@ -1148,6 +1153,7 @@ namespace kargo_takip
             this.cmbAKurumKisi.Name = "cmbAKurumKisi";
             this.cmbAKurumKisi.Size = new System.Drawing.Size(171, 23);
             this.cmbAKurumKisi.TabIndex = 1;
+            this.cmbAKurumKisi.SelectedIndexChanged += new System.EventHandler(this.cmbAKurumKisi_SelectedIndexChanged);
             // 
             // tabKargoTakip
             // 
@@ -1174,7 +1180,7 @@ namespace kargo_takip
             // 
             // picbLogo
             // 
-            this.picbLogo.Image = global::kargo_takip.Properties.Resources.vip_kargo_logo;
+            this.picbLogo.Image = ((System.Drawing.Image)(resources.GetObject("picbLogo.Image")));
             this.picbLogo.Location = new System.Drawing.Point(7, 15);
             this.picbLogo.Name = "picbLogo";
             this.picbLogo.Size = new System.Drawing.Size(314, 118);
@@ -2119,6 +2125,7 @@ namespace kargo_takip
             this.MaximumSize = new System.Drawing.Size(1057, 775);
             this.MinimumSize = new System.Drawing.Size(1057, 775);
             this.Name = "frmKargo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kargo Takip Programı - v1.1.0";
             this.Load += new System.EventHandler(this.frmKargo_Load);
             this.gboxOzet.ResumeLayout(false);

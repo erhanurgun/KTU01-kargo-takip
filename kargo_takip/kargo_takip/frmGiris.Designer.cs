@@ -39,11 +39,13 @@ namespace kargo_takip
             this.label1 = new System.Windows.Forms.Label();
             this.linkWebsite = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.chbBeniHatirla = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chbBeniHatirla);
             this.groupBox1.Controls.Add(this.btnGiris);
             this.groupBox1.Controls.Add(this.linkSifrem);
             this.groupBox1.Controls.Add(this.txtSifre);
@@ -52,7 +54,7 @@ namespace kargo_takip
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(8, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 166);
+            this.groupBox1.Size = new System.Drawing.Size(290, 193);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
@@ -69,10 +71,10 @@ namespace kargo_takip
             // linkSifrem
             // 
             this.linkSifrem.AutoSize = true;
-            this.linkSifrem.Location = new System.Drawing.Point(140, 140);
+            this.linkSifrem.Location = new System.Drawing.Point(94, 162);
             this.linkSifrem.Name = "linkSifrem";
             this.linkSifrem.Size = new System.Drawing.Size(116, 16);
-            this.linkSifrem.TabIndex = 4;
+            this.linkSifrem.TabIndex = 5;
             this.linkSifrem.TabStop = true;
             this.linkSifrem.Text = "Şifreni mi unuttun ?";
             this.linkSifrem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSifrem_LinkClicked);
@@ -113,10 +115,10 @@ namespace kargo_takip
             // linkWebsite
             // 
             this.linkWebsite.AutoSize = true;
-            this.linkWebsite.Location = new System.Drawing.Point(114, 175);
+            this.linkWebsite.Location = new System.Drawing.Point(117, 205);
             this.linkWebsite.Name = "linkWebsite";
             this.linkWebsite.Size = new System.Drawing.Size(144, 16);
-            this.linkWebsite.TabIndex = 8;
+            this.linkWebsite.TabIndex = 6;
             this.linkWebsite.TabStop = true;
             this.linkWebsite.Text = "www.erhanurgun.com.tr";
             this.linkWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsite_LinkClicked);
@@ -124,26 +126,36 @@ namespace kargo_takip
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 175);
+            this.label3.Location = new System.Drawing.Point(39, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "powered by";
             // 
+            // chbBeniHatirla
+            // 
+            this.chbBeniHatirla.AutoSize = true;
+            this.chbBeniHatirla.Location = new System.Drawing.Point(97, 139);
+            this.chbBeniHatirla.Name = "chbBeniHatirla";
+            this.chbBeniHatirla.Size = new System.Drawing.Size(96, 20);
+            this.chbBeniHatirla.TabIndex = 4;
+            this.chbBeniHatirla.Text = "Beni Hatırla";
+            this.chbBeniHatirla.UseVisualStyleBackColor = true;
+            // 
             // frmGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 203);
+            this.ClientSize = new System.Drawing.Size(308, 234);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.linkWebsite);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(324, 242);
+            this.MaximumSize = new System.Drawing.Size(324, 273);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(324, 242);
+            this.MinimumSize = new System.Drawing.Size(324, 273);
             this.Name = "frmGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KT - Giriş Yap";
@@ -166,6 +178,7 @@ namespace kargo_takip
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkWebsite;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chbBeniHatirla;
     }
 }
 

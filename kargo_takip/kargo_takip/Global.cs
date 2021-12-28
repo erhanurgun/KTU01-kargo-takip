@@ -35,15 +35,16 @@ namespace kargo_takip
         SqlConnection baglan = new SqlConnection();
         SqlCommand komut = new SqlCommand();
         SqlDataReader veri_oku;
-        ComboBox cmb;
-        TextBox txt;
-        Form frm;
-        Control ctrl;
+        public ComboBox cmb;
+        public Form frm;
+        public CheckBox chb;
+        //TextBox txt;
+        //Control ctrl;
         //ErrorProvider err;
         #endregion
 
         #region A2: Veritabanına Bağlan:
-        public string yol = @"Data Source=PCI-ACER\SQLSERVEREXP;Initial Catalog=kargo_takip;Integrated Security=True";
+        public string yol = @"Data Source=PCI-ACER\SQLSERVEREXP;Initial Catalog=app_kargo_takip;Integrated Security=True";
         public string sorgu, sutun_adi;
         public void dbBaglan(int tip)
         {
@@ -59,6 +60,7 @@ namespace kargo_takip
                 if (tip == 1) btnGirisYap();
                 else if (tip == 2) btnSifreAl();
                 else if (tip == 3) veriGetir();
+                else if (tip == 4) cmbSecimYap();
                 else
                     MessageBox.Show("Veritabanına bağlantı sağlandı fakat herhangi bir işlem yapılmadı!", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 baglan.Close();
@@ -124,7 +126,72 @@ namespace kargo_takip
         }
         #endregion
 
-        #region 03: emailGonder()
+        #region 03: veriGetir()
+        public string db_tc;
+        public bool db_durum;
+        public int mus_kurum_kisi;
+        public string mus_kurum_detay, mus_no, mus_ad, mus_soyad, mus_tel, mus_eposta;
+
+        public void veriGetir()
+        {
+            veri_oku = komut.ExecuteReader();
+            while (veri_oku.Read())
+            {
+                db_tc = veri_oku["tc"].ToString();
+                db_durum = Convert.ToBoolean(veri_oku["durum"]);
+
+                if (tc_cek == db_tc && db_durum)
+                {
+                    mus_kurum_kisi = Convert.ToInt16(veri_oku["musteri_tip"]);
+                    mus_kurum_detay = veri_oku["kurum_detay"].ToString();
+                    mus_no = veri_oku["musteri_no"].ToString();
+                    mus_ad = veri_oku["ad"].ToString();
+                    mus_soyad = veri_oku["soyad"].ToString();
+                    mus_tel = veri_oku["telefon"].ToString();
+                    mus_eposta = veri_oku["eposta"].ToString();
+                    break;
+                }
+            }
+        }
+        #endregion
+
+        #region 04: cmbSecimYap()
+        public void cmbSecimYap()
+        {
+            veri_oku = komut.ExecuteReader();
+            while (veri_oku.Read())
+                cmb.Items.Add(veri_oku[sutun_adi]);
+            if (cmb.Items.Count == 0)
+                MessageBox.Show("Veri bulunamadı!", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        #endregion
+
+        #endregion
+
+        #region A4: Kontrolleri Sağla:
+
+        #region 01: frmTemizle()
+        public void frmTemizle(Control ctrl)
+        {
+            string baslik = "Onaylama";
+            string mesaj = "Temizleme işlemini onaylıyor musunuz?";
+            foreach (Control c in ctrl.Controls)
+            {
+                if (typeof(TextBox) == c.GetType())
+                    ((TextBox)(c)).Text = "";
+                else if (typeof(MaskedTextBox) == c.GetType())
+                    ((MaskedTextBox)(c)).Text = "";
+                else if (typeof(RichTextBox) == c.GetType())
+                    ((RichTextBox)(c)).Text = "";
+                else if (typeof(ComboBox) == c.GetType())
+                    ((ComboBox)(c)).SelectedIndex = -1;
+                else
+                    frmTemizle(c);
+            }
+        }
+        #endregion
+
+        #region 02: emailGonder()
         public string smtp_email = "btsmtpdemo@gmail.com";
         public string smtp_sifre = "Smtp785*?";
         public string send_baslik = "Kargo Takip Uygulaması";
@@ -164,61 +231,7 @@ namespace kargo_takip
 
         #endregion
 
-        #region 04: veriGetir()
-        public string db_tc;
-        public bool db_durum;
-        public int mus_kurum_kisi;
-        public string mus_kurum_detay, mus_no, mus_ad, mus_soyad, mus_tel, mus_eposta;
-
-        public void veriGetir()
-        {
-            veri_oku = komut.ExecuteReader();
-            while (veri_oku.Read())
-            {
-                db_tc = veri_oku["tc"].ToString();
-                db_durum = Convert.ToBoolean(veri_oku["durum"]);
-
-                if (tc_cek == db_tc && db_durum)
-                {
-                    mus_kurum_kisi = Convert.ToInt16(veri_oku["musteri_tip"]);
-                    mus_kurum_detay = veri_oku["kurum_detay"].ToString();
-                    mus_no = veri_oku["musteri_no"].ToString();
-                    mus_ad = veri_oku["ad"].ToString();
-                    mus_soyad = veri_oku["soyad"].ToString();
-                    mus_tel = veri_oku["telefon"].ToString();
-                    mus_eposta = veri_oku["eposta"].ToString();
-                    break;
-                }
-            }
-        }
-        #endregion
-
-        #endregion
-
-        #region A4: Kontrolleri Sağla:
-
-        #region 01: frmTemizle()
-        public void frmTemizle(Control ctrl)
-        {
-            string baslik = "Onaylama";
-            string mesaj = "Temizleme işlemini onaylıyor musunuz?";
-            foreach (Control c in ctrl.Controls)
-            {
-                if (typeof(TextBox) == c.GetType())
-                    ((TextBox)(c)).Text = "";
-                else if (typeof(MaskedTextBox) == c.GetType())
-                    ((MaskedTextBox)(c)).Text = "";
-                else if (typeof(RichTextBox) == c.GetType())
-                    ((RichTextBox)(c)).Text = "";
-                else if (typeof(ComboBox) == c.GetType())
-                    ((ComboBox)(c)).SelectedIndex = -1;
-                else
-                    frmTemizle(c);
-            }
-        }
-        #endregion
-
-        #region 02: tcKontrol();
+        #region 03: tcKontrol()
         public string tc_cek, tc_bul;
         public void tcKontrol(ErrorProvider err, MaskedTextBox txt, bool veri_al)
         {
@@ -248,12 +261,50 @@ namespace kargo_takip
 
                 if (tc_cek.Length == 11 && (tc_cek != tc_bul))
                     err.SetError(txt, "T.C. kimlik numarası yanlış girildi!");
-                else if(tc_cek == tc_bul && veri_al)
+                else if (tc_cek == tc_bul && veri_al)
                     dbBaglan(3);
                 else
                     err.SetError(txt, "");
             }
         }
+        #endregion
+
+        #region 04: desiAl()
+        public double en, boy, yukseklik, agirlik;
+        public double top_agirlik, top_desi, top_es_agirlik, desi;
+        public void desiAl()
+        {
+            desi = (en * boy * yukseklik) / 3000;
+            top_agirlik += agirlik;
+            top_desi += desi;
+
+            if (desi > agirlik)
+                top_es_agirlik += desi;
+            else
+                top_es_agirlik += agirlik;
+        }
+        #endregion
+
+        #region 05: beniHatirla()
+
+        
+        public void beniHatirla()
+        {
+            if (chb.Checked)
+            {
+                Ayarlar.Default.kul_adi = txt_kadi;
+                Ayarlar.Default.kul_sifre = txt_sifre;
+                Ayarlar.Default.beni_hatirla = true;
+            }
+            else
+            {
+                Ayarlar.Default.kul_adi = null;
+                Ayarlar.Default.kul_sifre = null;
+                Ayarlar.Default.beni_hatirla = false;
+            }
+            Ayarlar.Default.Save();
+        }
+
         #endregion
 
         #endregion
