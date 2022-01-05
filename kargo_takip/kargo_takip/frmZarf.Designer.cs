@@ -79,7 +79,7 @@ namespace kargo_takip
             this.groupBox6.Controls.Add(this.lblAdetSayisi);
             this.groupBox6.Controls.Add(this.cmbZarfAdetSayisi);
             this.groupBox6.Controls.Add(this.btnDevamZarf);
-            this.groupBox6.Location = new System.Drawing.Point(318, 250);
+            this.groupBox6.Location = new System.Drawing.Point(318, 232);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(357, 84);
             this.groupBox6.TabIndex = 10;
@@ -130,9 +130,9 @@ namespace kargo_takip
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Location = new System.Drawing.Point(318, 14);
+            this.groupBox4.Location = new System.Drawing.Point(318, 9);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(357, 230);
+            this.groupBox4.Size = new System.Drawing.Size(357, 223);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = " Özet ";
@@ -142,7 +142,7 @@ namespace kargo_takip
             this.groupBox5.Controls.Add(this.lblZarfGenelTop);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.label20);
-            this.groupBox5.Location = new System.Drawing.Point(54, 156);
+            this.groupBox5.Location = new System.Drawing.Point(54, 151);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(272, 55);
             this.groupBox5.TabIndex = 2;
@@ -179,7 +179,7 @@ namespace kargo_takip
             // lblZarfKdv
             // 
             this.lblZarfKdv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblZarfKdv.Location = new System.Drawing.Point(246, 132);
+            this.lblZarfKdv.Location = new System.Drawing.Point(246, 127);
             this.lblZarfKdv.Name = "lblZarfKdv";
             this.lblZarfKdv.Size = new System.Drawing.Size(55, 20);
             this.lblZarfKdv.TabIndex = 0;
@@ -188,7 +188,7 @@ namespace kargo_takip
             // lblZarfToplam
             // 
             this.lblZarfToplam.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblZarfToplam.Location = new System.Drawing.Point(246, 99);
+            this.lblZarfToplam.Location = new System.Drawing.Point(246, 94);
             this.lblZarfToplam.Name = "lblZarfToplam";
             this.lblZarfToplam.Size = new System.Drawing.Size(55, 20);
             this.lblZarfToplam.TabIndex = 0;
@@ -198,7 +198,7 @@ namespace kargo_takip
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(188, 134);
+            this.label17.Location = new System.Drawing.Point(188, 129);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 15);
             this.label17.TabIndex = 0;
@@ -207,7 +207,7 @@ namespace kargo_takip
             // lblZarfEkHiz
             // 
             this.lblZarfEkHiz.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblZarfEkHiz.Location = new System.Drawing.Point(246, 63);
+            this.lblZarfEkHiz.Location = new System.Drawing.Point(246, 58);
             this.lblZarfEkHiz.Name = "lblZarfEkHiz";
             this.lblZarfEkHiz.Size = new System.Drawing.Size(55, 20);
             this.lblZarfEkHiz.TabIndex = 0;
@@ -217,7 +217,7 @@ namespace kargo_takip
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(167, 100);
+            this.label14.Location = new System.Drawing.Point(167, 95);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 15);
             this.label14.TabIndex = 0;
@@ -226,7 +226,7 @@ namespace kargo_takip
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(232, 133);
+            this.label16.Location = new System.Drawing.Point(232, 128);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(15, 16);
             this.label16.TabIndex = 1;
@@ -235,7 +235,7 @@ namespace kargo_takip
             // lblZarfTasima
             // 
             this.lblZarfTasima.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblZarfTasima.Location = new System.Drawing.Point(246, 30);
+            this.lblZarfTasima.Location = new System.Drawing.Point(246, 25);
             this.lblZarfTasima.Name = "lblZarfTasima";
             this.lblZarfTasima.Size = new System.Drawing.Size(55, 20);
             this.lblZarfTasima.TabIndex = 0;
@@ -244,7 +244,7 @@ namespace kargo_takip
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(232, 100);
+            this.label13.Location = new System.Drawing.Point(232, 95);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 16);
             this.label13.TabIndex = 1;
@@ -254,7 +254,7 @@ namespace kargo_takip
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(133, 65);
+            this.label11.Location = new System.Drawing.Point(133, 60);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 15);
             this.label11.TabIndex = 0;
@@ -263,7 +263,7 @@ namespace kargo_takip
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(232, 65);
+            this.label10.Location = new System.Drawing.Point(232, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 16);
             this.label10.TabIndex = 1;
@@ -273,7 +273,7 @@ namespace kargo_takip
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 32);
+            this.label3.Location = new System.Drawing.Point(65, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 15);
             this.label3.TabIndex = 0;
@@ -282,7 +282,7 @@ namespace kargo_takip
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(232, 31);
+            this.label9.Location = new System.Drawing.Point(232, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(15, 16);
             this.label9.TabIndex = 1;
@@ -292,7 +292,7 @@ namespace kargo_takip
             // 
             this.groupBox1.Controls.Add(this.chbZarfMesajBilgi);
             this.groupBox1.Controls.Add(this.lblMesajBilgi);
-            this.groupBox1.Location = new System.Drawing.Point(14, 250);
+            this.groupBox1.Location = new System.Drawing.Point(14, 232);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(297, 84);
             this.groupBox1.TabIndex = 6;
@@ -327,7 +327,7 @@ namespace kargo_takip
             this.groupBox3.Controls.Add(this.rbtnZarfTeslimSube);
             this.groupBox3.Controls.Add(this.rbtnZarfTeslimTel);
             this.groupBox3.Controls.Add(this.rbtnZarfTeslimAdres);
-            this.groupBox3.Location = new System.Drawing.Point(14, 108);
+            this.groupBox3.Location = new System.Drawing.Point(14, 97);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(297, 135);
             this.groupBox3.TabIndex = 7;
@@ -400,7 +400,7 @@ namespace kargo_takip
             this.groupBox2.Controls.Add(this.lblAlimAdres);
             this.groupBox2.Controls.Add(this.rbtnZarfAlimSube);
             this.groupBox2.Controls.Add(this.rbtnZarfAlimAdres);
-            this.groupBox2.Location = new System.Drawing.Point(14, 14);
+            this.groupBox2.Location = new System.Drawing.Point(14, 9);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(297, 88);
             this.groupBox2.TabIndex = 8;
@@ -451,7 +451,7 @@ namespace kargo_takip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 348);
+            this.ClientSize = new System.Drawing.Size(691, 333);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
@@ -460,10 +460,11 @@ namespace kargo_takip
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(707, 387);
+            this.MaximumSize = new System.Drawing.Size(707, 372);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(707, 387);
+            this.MinimumSize = new System.Drawing.Size(707, 372);
             this.Name = "frmZarf";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dosya / Evrak ( 0 - 500gr )";
             this.Load += new System.EventHandler(this.frmZarf_Load);
             this.groupBox6.ResumeLayout(false);

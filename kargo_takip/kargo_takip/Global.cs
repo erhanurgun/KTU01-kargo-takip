@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
 using System.Net.Mail;
@@ -14,7 +15,9 @@ namespace kargo_takip
 {
     class Global
     {
-        #region void: hataSatiriniBul():
+        #region void: hataSatiriniBul(), yukleniyor()
+
+        #region 01: hataSatiriniBul()
         public int hataSatiriniBul(Exception ex)
         {
             var satir_no = 0;
@@ -29,6 +32,32 @@ namespace kargo_takip
             }
             return satir_no;
         }
+
+        #endregion
+
+        #region 02: yukleniyor()
+        /* Değişkenler:
+         * Timer, TabControl, Form
+         * tmr, tCtrl, frm
+         */
+        public void imgYukleniyor()
+        {
+            tmr.Start();
+            tCtrl.Visible = false;
+
+            PictureBox pic = new PictureBox
+            {
+                Name = "imgPreloader",
+                Size = new Size(frm.Width - 100, frm.Height - 50),
+                Location = new Point(0, 0)
+            };
+            frm.Controls.Add(pic);
+            pic.SizeMode = PictureBoxSizeMode.CenterImage;
+            pic.ImageLocation = @"../../Resources/preloader.gif";
+            //pic.ImageLocation = @"D:\PROJECTS\ProgramlamaDilleri\CSharp\_ktu_\KTU01-kargo-takip\kargo_takip\kargo_takip\Resources\preloader.gif";
+        }
+        #endregion
+
         #endregion
 
         #region A1: Global Değişkenler
@@ -38,9 +67,13 @@ namespace kargo_takip
         public ComboBox cmb;
         public Form frm;
         public CheckBox chb;
-        //TextBox txt;
+        public ErrorProvider err;
+        public Random rnd;
+        public TextBox txt;
+        public Timer tmr;
+        public TabControl tCtrl;
+        //GroupBox grb;
         //Control ctrl;
-        //ErrorProvider err;
         #endregion
 
         #region A2: Veritabanına Bağlan:
@@ -61,6 +94,7 @@ namespace kargo_takip
                 else if (tip == 2) btnSifreAl();
                 else if (tip == 3) veriGetir();
                 else if (tip == 4) cmbSecimYap();
+                else if (tip == 5) uretMusteriNo();
                 else
                     MessageBox.Show("Veritabanına bağlantı sağlandı fakat herhangi bir işlem yapılmadı!", "Uyarı !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 baglan.Close();
@@ -134,24 +168,24 @@ namespace kargo_takip
 
         public void veriGetir()
         {
-            veri_oku = komut.ExecuteReader();
-            while (veri_oku.Read())
-            {
-                db_tc = veri_oku["tc"].ToString();
-                db_durum = Convert.ToBoolean(veri_oku["durum"]);
+            //veri_oku = komut.ExecuteReader();
+            //while (veri_oku.Read())
+            //{
+            //    db_tc = veri_oku["tc"].ToString();
+            //    db_durum = Convert.ToBoolean(veri_oku["durum"]);
 
-                if (tc_cek == db_tc && db_durum)
-                {
-                    mus_kurum_kisi = Convert.ToInt16(veri_oku["musteri_tip"]);
-                    mus_kurum_detay = veri_oku["kurum_detay"].ToString();
-                    mus_no = veri_oku["musteri_no"].ToString();
-                    mus_ad = veri_oku["ad"].ToString();
-                    mus_soyad = veri_oku["soyad"].ToString();
-                    mus_tel = veri_oku["telefon"].ToString();
-                    mus_eposta = veri_oku["eposta"].ToString();
-                    break;
-                }
-            }
+            //    if (tc_cek == db_tc && db_durum)
+            //    {
+            //        mus_kurum_kisi = Convert.ToInt16(veri_oku["musteri_tip"]);
+            //        mus_kurum_detay = veri_oku["kurum_detay"].ToString();
+            //        mus_no = veri_oku["musteri_no"].ToString();
+            //        mus_ad = veri_oku["ad"].ToString();
+            //        mus_soyad = veri_oku["soyad"].ToString();
+            //        mus_tel = veri_oku["telefon"].ToString();
+            //        mus_eposta = veri_oku["eposta"].ToString();
+            //        break;
+            //    }
+            //}
         }
         #endregion
 
@@ -267,19 +301,24 @@ namespace kargo_takip
         }
         #endregion
 
-        #region 04: desiAl()
-        public double koli_en, koli_boy, koli_yukseklik, koli_agirlik;
-        public double top_agirlik, top_desi, top_es_agirlik, desi;
-        public void desiAl()
+        #region 04: bosMu()
+        public bool hata_var_mi = false;
+        public bool bosMu(GroupBox grb)
         {
-            desi = (koli_en * koli_boy * koli_yukseklik) / 3000;
-            top_agirlik += koli_agirlik;
-            top_desi += desi;
-
-            if (desi > koli_agirlik)
-                top_es_agirlik += desi;
-            else
-                top_es_agirlik += koli_agirlik;
+            foreach (Control c in grb.Controls)
+            {
+                if (c is TextBox || c is RichTextBox || c is MaskedTextBox || c is ComboBox)
+                {
+                    if (c.Text == string.Empty && c.Enabled)
+                    {
+                        err.SetError(c, "Bu alan boş bırakılamaz!");
+                        hata_var_mi = true;
+                    }
+                    else if (c.Text != string.Empty)
+                        err.SetError(c, string.Empty);
+                }
+            }
+            return hata_var_mi;
         }
         #endregion
 
@@ -299,6 +338,35 @@ namespace kargo_takip
                 Ayarlar.Default.beni_hatirla = false;
             }
             Ayarlar.Default.Save();
+        }
+        #endregion
+
+        #endregion
+
+        #region A5: Veri Üret
+
+        #region 01: uretMusteriNo()
+        public string uret_mus_no;
+        public void uretMusteriNo()
+        {
+            rnd = new Random();
+            int rast_sayi = rnd.Next(10000000, 99999999);
+
+            veri_oku = komut.ExecuteReader();
+            while (veri_oku.Read())
+            {
+                db_tc = veri_oku["musteri_no"].ToString();
+                string gelen_sayi = veri_oku["musteri_no"].ToString();
+                if (gelen_sayi != txt.Text)
+                {
+                    if (gelen_sayi != rast_sayi.ToString())
+                        uret_mus_no = rast_sayi.ToString();
+                    else
+                        uretMusteriNo();
+                }
+            }
+            if (uret_mus_no != txt.Text)
+                txt.Text = uret_mus_no;
         }
         #endregion
 

@@ -16,7 +16,6 @@ namespace kargo_takip
         public double alim_adres = 4.26, alim_sube = 0, teslim_adres = 4.26, teslim_sube = 1.79, teslim_tel = 3.45, kisa_mesaj = 0.83;
         public double tasima_bedeli = 14.76, ek_hizmet, toplam, kdv, genel_toplam;
         public int adet;
-        public bool tip = true;
 
         #region 01: secimYap()
         public void secimYap(RadioButton rbtnZarf, CheckBox chbZarf, double dbl)
@@ -43,13 +42,7 @@ namespace kargo_takip
         public void veriAl()
         {
             adet = Convert.ToInt16(cmbZarfAdetSayisi.Text);
-
-            if (tip == true)
-                tasima_bedeli = 14.76 * adet;
-
-            else
-                cmbZarfAdetSayisi.Enabled = false;
-
+            tasima_bedeli *= adet;
             toplam = tasima_bedeli + ek_hizmet;
             kdv = toplam * 0.235;
             genel_toplam = toplam + kdv;
@@ -75,6 +68,9 @@ namespace kargo_takip
                 cmbZarfAdetSayisi.Items.Add(i);
 
             cmbZarfAdetSayisi.SelectedIndex = 0;
+            rbtnZarfAlimAdres.Checked = true;
+            rbtnZarfTeslimAdres.Checked = true;
+
             veriAl();
         }
 

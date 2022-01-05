@@ -127,7 +127,7 @@ namespace kargo_takip
             this.btnGoruntule = new System.Windows.Forms.Button();
             this.label125 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.lblKalanSure = new System.Windows.Forms.Label();
+            this.lblTahminiSure = new System.Windows.Forms.Label();
             this.label122 = new System.Windows.Forms.Label();
             this.lblMesafe = new System.Windows.Forms.Label();
             this.label120 = new System.Windows.Forms.Label();
@@ -158,8 +158,6 @@ namespace kargo_takip
             this.dataKargoListesi = new System.Windows.Forms.DataGridView();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.lblOzetAIndirim = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
             this.lblOzetAAlAdet = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.lblOzetAGonAdet = new System.Windows.Forms.Label();
@@ -173,8 +171,6 @@ namespace kargo_takip
             this.lblOzetAAdi = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.lblOzetGIndirim = new System.Windows.Forms.Label();
-            this.label94 = new System.Windows.Forms.Label();
             this.lblOzetGAlAdet = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.lblOzetGGonAdet = new System.Windows.Forms.Label();
@@ -194,11 +190,8 @@ namespace kargo_takip
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.mtxtTcNo = new System.Windows.Forms.MaskedTextBox();
             this.btnFiltrele = new System.Windows.Forms.Button();
-            this.label62 = new System.Windows.Forms.Label();
-            this.cmbFiltreTipi = new System.Windows.Forms.ComboBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.txtMusteriNo = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
@@ -214,7 +207,9 @@ namespace kargo_takip
             this.cmbYukleniyor = new System.Windows.Forms.CheckBox();
             this.cmbIkonGoster = new System.Windows.Forms.CheckBox();
             this.cmbBasCalistir = new System.Windows.Forms.CheckBox();
-            this.hataMesaji = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errHataMesaji = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtxtMusteriNo = new System.Windows.Forms.MaskedTextBox();
+            this.tmrZamanlama = new System.Windows.Forms.Timer(this.components);
             this.gboxOzet.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gboxGonderici.SuspendLayout();
@@ -244,7 +239,7 @@ namespace kargo_takip
             this.tabAyarlar.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hataMesaji)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errHataMesaji)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxOzet
@@ -522,7 +517,7 @@ namespace kargo_takip
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 127);
+            this.label1.Location = new System.Drawing.Point(37, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 6;
@@ -531,7 +526,7 @@ namespace kargo_takip
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(62, 94);
+            this.label8.Location = new System.Drawing.Point(64, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 16);
             this.label8.TabIndex = 7;
@@ -548,7 +543,7 @@ namespace kargo_takip
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 58);
+            this.label7.Location = new System.Drawing.Point(78, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 16);
             this.label7.TabIndex = 12;
@@ -810,9 +805,9 @@ namespace kargo_takip
             // 
             // btnKargoTemizle
             // 
-            this.btnKargoTemizle.Location = new System.Drawing.Point(171, 82);
+            this.btnKargoTemizle.Location = new System.Drawing.Point(165, 85);
             this.btnKargoTemizle.Name = "btnKargoTemizle";
-            this.btnKargoTemizle.Size = new System.Drawing.Size(122, 46);
+            this.btnKargoTemizle.Size = new System.Drawing.Size(142, 46);
             this.btnKargoTemizle.TabIndex = 0;
             this.btnKargoTemizle.Text = "🗑️ TEMİZLE";
             this.btnKargoTemizle.UseVisualStyleBackColor = true;
@@ -821,9 +816,9 @@ namespace kargo_takip
             // btnKargoSil
             // 
             this.btnKargoSil.Enabled = false;
-            this.btnKargoSil.Location = new System.Drawing.Point(44, 82);
+            this.btnKargoSil.Location = new System.Drawing.Point(15, 85);
             this.btnKargoSil.Name = "btnKargoSil";
-            this.btnKargoSil.Size = new System.Drawing.Size(121, 46);
+            this.btnKargoSil.Size = new System.Drawing.Size(142, 46);
             this.btnKargoSil.TabIndex = 0;
             this.btnKargoSil.Text = "🗑️ SİL";
             this.btnKargoSil.UseVisualStyleBackColor = true;
@@ -832,9 +827,9 @@ namespace kargo_takip
             // btnKargoGuncelle
             // 
             this.btnKargoGuncelle.Enabled = false;
-            this.btnKargoGuncelle.Location = new System.Drawing.Point(171, 29);
+            this.btnKargoGuncelle.Location = new System.Drawing.Point(165, 27);
             this.btnKargoGuncelle.Name = "btnKargoGuncelle";
-            this.btnKargoGuncelle.Size = new System.Drawing.Size(122, 46);
+            this.btnKargoGuncelle.Size = new System.Drawing.Size(142, 46);
             this.btnKargoGuncelle.TabIndex = 0;
             this.btnKargoGuncelle.Text = "📁 GÜNCELLE";
             this.btnKargoGuncelle.UseVisualStyleBackColor = true;
@@ -842,9 +837,9 @@ namespace kargo_takip
             // 
             // btnKargoKaydet
             // 
-            this.btnKargoKaydet.Location = new System.Drawing.Point(44, 29);
+            this.btnKargoKaydet.Location = new System.Drawing.Point(15, 27);
             this.btnKargoKaydet.Name = "btnKargoKaydet";
-            this.btnKargoKaydet.Size = new System.Drawing.Size(121, 46);
+            this.btnKargoKaydet.Size = new System.Drawing.Size(142, 46);
             this.btnKargoKaydet.TabIndex = 0;
             this.btnKargoKaydet.Text = "💾 KAYDET";
             this.btnKargoKaydet.UseVisualStyleBackColor = true;
@@ -1229,7 +1224,7 @@ namespace kargo_takip
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.lblKalanSure);
+            this.groupBox14.Controls.Add(this.lblTahminiSure);
             this.groupBox14.Controls.Add(this.label122);
             this.groupBox14.Controls.Add(this.lblMesafe);
             this.groupBox14.Controls.Add(this.label120);
@@ -1260,23 +1255,23 @@ namespace kargo_takip
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = " Özet Bilgi ";
             // 
-            // lblKalanSure
+            // lblTahminiSure
             // 
-            this.lblKalanSure.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblKalanSure.Location = new System.Drawing.Point(132, 375);
-            this.lblKalanSure.Name = "lblKalanSure";
-            this.lblKalanSure.Size = new System.Drawing.Size(152, 23);
-            this.lblKalanSure.TabIndex = 2;
-            this.lblKalanSure.Text = "____________________";
+            this.lblTahminiSure.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTahminiSure.Location = new System.Drawing.Point(132, 375);
+            this.lblTahminiSure.Name = "lblTahminiSure";
+            this.lblTahminiSure.Size = new System.Drawing.Size(152, 23);
+            this.lblTahminiSure.TabIndex = 2;
+            this.lblTahminiSure.Text = "____________________";
             // 
             // label122
             // 
             this.label122.AutoSize = true;
-            this.label122.Location = new System.Drawing.Point(52, 376);
+            this.label122.Location = new System.Drawing.Point(33, 376);
             this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(76, 16);
+            this.label122.Size = new System.Drawing.Size(90, 16);
             this.label122.TabIndex = 2;
-            this.label122.Text = "Kalan Süre:";
+            this.label122.Text = "Tahmini Süre:";
             // 
             // lblMesafe
             // 
@@ -1290,7 +1285,7 @@ namespace kargo_takip
             // label120
             // 
             this.label120.AutoSize = true;
-            this.label120.Location = new System.Drawing.Point(72, 345);
+            this.label120.Location = new System.Drawing.Point(67, 345);
             this.label120.Name = "label120";
             this.label120.Size = new System.Drawing.Size(56, 16);
             this.label120.TabIndex = 2;
@@ -1308,11 +1303,11 @@ namespace kargo_takip
             // label116
             // 
             this.label116.AutoSize = true;
-            this.label116.Location = new System.Drawing.Point(77, 314);
+            this.label116.Location = new System.Drawing.Point(24, 315);
             this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(50, 16);
+            this.label116.Size = new System.Drawing.Size(101, 16);
             this.label116.TabIndex = 2;
-            this.label116.Text = "Durum:";
+            this.label116.Text = "Teslim Durumu:";
             // 
             // lblTeslimSaati
             // 
@@ -1326,7 +1321,7 @@ namespace kargo_takip
             // label114
             // 
             this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(47, 285);
+            this.label114.Location = new System.Drawing.Point(39, 285);
             this.label114.Name = "label114";
             this.label114.Size = new System.Drawing.Size(86, 16);
             this.label114.TabIndex = 2;
@@ -1344,7 +1339,7 @@ namespace kargo_takip
             // label112
             // 
             this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(44, 253);
+            this.label112.Location = new System.Drawing.Point(36, 253);
             this.label112.Name = "label112";
             this.label112.Size = new System.Drawing.Size(89, 16);
             this.label112.TabIndex = 2;
@@ -1362,7 +1357,7 @@ namespace kargo_takip
             // label99
             // 
             this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(50, 222);
+            this.label99.Location = new System.Drawing.Point(43, 222);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(82, 16);
             this.label99.TabIndex = 2;
@@ -1380,7 +1375,7 @@ namespace kargo_takip
             // label101
             // 
             this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(54, 190);
+            this.label101.Location = new System.Drawing.Point(48, 190);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(77, 16);
             this.label101.TabIndex = 2;
@@ -1398,7 +1393,7 @@ namespace kargo_takip
             // label103
             // 
             this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(54, 159);
+            this.label103.Location = new System.Drawing.Point(48, 159);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(77, 16);
             this.label103.TabIndex = 2;
@@ -1416,7 +1411,7 @@ namespace kargo_takip
             // label105
             // 
             this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(55, 128);
+            this.label105.Location = new System.Drawing.Point(51, 128);
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(75, 16);
             this.label105.TabIndex = 2;
@@ -1434,7 +1429,7 @@ namespace kargo_takip
             // label107
             // 
             this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(91, 99);
+            this.label107.Location = new System.Drawing.Point(90, 99);
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(36, 16);
             this.label107.TabIndex = 2;
@@ -1452,7 +1447,7 @@ namespace kargo_takip
             // label109
             // 
             this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(62, 37);
+            this.label109.Location = new System.Drawing.Point(61, 37);
             this.label109.Name = "label109";
             this.label109.Size = new System.Drawing.Size(67, 16);
             this.label109.TabIndex = 2;
@@ -1470,7 +1465,7 @@ namespace kargo_takip
             // label111
             // 
             this.label111.AutoSize = true;
-            this.label111.Location = new System.Drawing.Point(61, 69);
+            this.label111.Location = new System.Drawing.Point(58, 69);
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(69, 16);
             this.label111.TabIndex = 2;
@@ -1511,9 +1506,9 @@ namespace kargo_takip
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.dataKargoListesi);
-            this.groupBox11.Location = new System.Drawing.Point(287, 314);
+            this.groupBox11.Location = new System.Drawing.Point(287, 282);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(729, 378);
+            this.groupBox11.Size = new System.Drawing.Size(729, 413);
             this.groupBox11.TabIndex = 2;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = " Kargo Listesi ";
@@ -1523,7 +1518,7 @@ namespace kargo_takip
             this.dataKargoListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataKargoListesi.Location = new System.Drawing.Point(6, 21);
             this.dataKargoListesi.Name = "dataKargoListesi";
-            this.dataKargoListesi.Size = new System.Drawing.Size(717, 350);
+            this.dataKargoListesi.Size = new System.Drawing.Size(717, 386);
             this.dataKargoListesi.TabIndex = 0;
             // 
             // groupBox10
@@ -1532,15 +1527,13 @@ namespace kargo_takip
             this.groupBox10.Controls.Add(this.groupBox12);
             this.groupBox10.Location = new System.Drawing.Point(287, 7);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(729, 306);
+            this.groupBox10.Size = new System.Drawing.Size(729, 275);
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = " Özet Bilgi ";
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.lblOzetAIndirim);
-            this.groupBox13.Controls.Add(this.label83);
             this.groupBox13.Controls.Add(this.lblOzetAAlAdet);
             this.groupBox13.Controls.Add(this.label85);
             this.groupBox13.Controls.Add(this.lblOzetAGonAdet);
@@ -1553,30 +1546,12 @@ namespace kargo_takip
             this.groupBox13.Controls.Add(this.label93);
             this.groupBox13.Controls.Add(this.lblOzetAAdi);
             this.groupBox13.Controls.Add(this.label97);
-            this.groupBox13.Location = new System.Drawing.Point(378, 28);
+            this.groupBox13.Location = new System.Drawing.Point(378, 26);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(328, 257);
+            this.groupBox13.Size = new System.Drawing.Size(328, 224);
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = " Alıcı Hakkında ";
-            // 
-            // lblOzetAIndirim
-            // 
-            this.lblOzetAIndirim.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblOzetAIndirim.Location = new System.Drawing.Point(132, 215);
-            this.lblOzetAIndirim.Name = "lblOzetAIndirim";
-            this.lblOzetAIndirim.Size = new System.Drawing.Size(152, 23);
-            this.lblOzetAIndirim.TabIndex = 2;
-            this.lblOzetAIndirim.Text = "____________________";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(44, 219);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(85, 16);
-            this.label83.TabIndex = 2;
-            this.label83.Text = "İndirim Oranı:";
             // 
             // lblOzetAAlAdet
             // 
@@ -1590,7 +1565,7 @@ namespace kargo_takip
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(59, 188);
+            this.label85.Location = new System.Drawing.Point(51, 188);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(71, 16);
             this.label85.TabIndex = 2;
@@ -1608,7 +1583,7 @@ namespace kargo_takip
             // label87
             // 
             this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(28, 157);
+            this.label87.Location = new System.Drawing.Point(19, 157);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(104, 16);
             this.label87.TabIndex = 2;
@@ -1626,7 +1601,7 @@ namespace kargo_takip
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(52, 126);
+            this.label89.Location = new System.Drawing.Point(47, 126);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(77, 16);
             this.label89.TabIndex = 2;
@@ -1644,7 +1619,7 @@ namespace kargo_takip
             // label91
             // 
             this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(75, 97);
+            this.label91.Location = new System.Drawing.Point(71, 97);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(57, 16);
             this.label91.TabIndex = 2;
@@ -1680,7 +1655,7 @@ namespace kargo_takip
             // label97
             // 
             this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(96, 67);
+            this.label97.Location = new System.Drawing.Point(94, 67);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(31, 16);
             this.label97.TabIndex = 2;
@@ -1688,8 +1663,6 @@ namespace kargo_takip
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.lblOzetGIndirim);
-            this.groupBox12.Controls.Add(this.label94);
             this.groupBox12.Controls.Add(this.lblOzetGAlAdet);
             this.groupBox12.Controls.Add(this.label77);
             this.groupBox12.Controls.Add(this.lblOzetGGonAdet);
@@ -1702,30 +1675,12 @@ namespace kargo_takip
             this.groupBox12.Controls.Add(this.label80);
             this.groupBox12.Controls.Add(this.lblOzetGAdi);
             this.groupBox12.Controls.Add(this.label69);
-            this.groupBox12.Location = new System.Drawing.Point(22, 28);
+            this.groupBox12.Location = new System.Drawing.Point(22, 26);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(328, 257);
+            this.groupBox12.Size = new System.Drawing.Size(328, 224);
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = " Gönderici Hakkında ";
-            // 
-            // lblOzetGIndirim
-            // 
-            this.lblOzetGIndirim.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblOzetGIndirim.Location = new System.Drawing.Point(132, 215);
-            this.lblOzetGIndirim.Name = "lblOzetGIndirim";
-            this.lblOzetGIndirim.Size = new System.Drawing.Size(152, 23);
-            this.lblOzetGIndirim.TabIndex = 2;
-            this.lblOzetGIndirim.Text = "____________________";
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(44, 220);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(85, 16);
-            this.label94.TabIndex = 2;
-            this.label94.Text = "İndirim Oranı:";
             // 
             // lblOzetGAlAdet
             // 
@@ -1739,7 +1694,7 @@ namespace kargo_takip
             // label77
             // 
             this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(59, 188);
+            this.label77.Location = new System.Drawing.Point(55, 188);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(71, 16);
             this.label77.TabIndex = 2;
@@ -1757,7 +1712,7 @@ namespace kargo_takip
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(28, 157);
+            this.label75.Location = new System.Drawing.Point(22, 157);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(104, 16);
             this.label75.TabIndex = 2;
@@ -1775,7 +1730,7 @@ namespace kargo_takip
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(52, 126);
+            this.label73.Location = new System.Drawing.Point(49, 126);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(77, 16);
             this.label73.TabIndex = 2;
@@ -1793,7 +1748,7 @@ namespace kargo_takip
             // label71
             // 
             this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(75, 97);
+            this.label71.Location = new System.Drawing.Point(72, 97);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(57, 16);
             this.label71.TabIndex = 2;
@@ -1829,7 +1784,7 @@ namespace kargo_takip
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(96, 67);
+            this.label69.Location = new System.Drawing.Point(95, 67);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(31, 16);
             this.label69.TabIndex = 2;
@@ -1840,9 +1795,9 @@ namespace kargo_takip
             this.groupBox1.Controls.Add(this.pdfCiktiAl);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 314);
+            this.groupBox1.Location = new System.Drawing.Point(8, 282);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 378);
+            this.groupBox1.Size = new System.Drawing.Size(273, 413);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Çıktı ";
@@ -1853,12 +1808,12 @@ namespace kargo_takip
             this.pdfCiktiAl.Location = new System.Drawing.Point(6, 21);
             this.pdfCiktiAl.Name = "pdfCiktiAl";
             this.pdfCiktiAl.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfCiktiAl.OcxState")));
-            this.pdfCiktiAl.Size = new System.Drawing.Size(261, 306);
+            this.pdfCiktiAl.Size = new System.Drawing.Size(261, 341);
             this.pdfCiktiAl.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(139, 334);
+            this.button2.Location = new System.Drawing.Point(139, 369);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 38);
             this.button2.TabIndex = 0;
@@ -1867,7 +1822,7 @@ namespace kargo_takip
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 333);
+            this.button1.Location = new System.Drawing.Point(6, 368);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 38);
             this.button1.TabIndex = 0;
@@ -1876,13 +1831,11 @@ namespace kargo_takip
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.mtxtMusteriNo);
             this.groupBox7.Controls.Add(this.mtxtTcNo);
             this.groupBox7.Controls.Add(this.btnFiltrele);
-            this.groupBox7.Controls.Add(this.label62);
-            this.groupBox7.Controls.Add(this.cmbFiltreTipi);
             this.groupBox7.Controls.Add(this.txtSoyad);
             this.groupBox7.Controls.Add(this.label59);
-            this.groupBox7.Controls.Add(this.txtMusteriNo);
             this.groupBox7.Controls.Add(this.label61);
             this.groupBox7.Controls.Add(this.label60);
             this.groupBox7.Controls.Add(this.txtAd);
@@ -1893,15 +1846,14 @@ namespace kargo_takip
             this.groupBox7.Controls.Add(this.dateIlkTarih);
             this.groupBox7.Location = new System.Drawing.Point(7, 7);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(273, 306);
+            this.groupBox7.Size = new System.Drawing.Size(273, 275);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = " Filtreleme Seçenekleri ";
             // 
             // mtxtTcNo
             // 
-            this.mtxtTcNo.Enabled = false;
-            this.mtxtTcNo.Location = new System.Drawing.Point(103, 120);
+            this.mtxtTcNo.Location = new System.Drawing.Point(103, 85);
             this.mtxtTcNo.Mask = "00000000000";
             this.mtxtTcNo.Name = "mtxtTcNo";
             this.mtxtTcNo.Size = new System.Drawing.Size(128, 21);
@@ -1910,38 +1862,16 @@ namespace kargo_takip
             // 
             // btnFiltrele
             // 
-            this.btnFiltrele.Location = new System.Drawing.Point(103, 246);
+            this.btnFiltrele.Location = new System.Drawing.Point(103, 211);
             this.btnFiltrele.Name = "btnFiltrele";
             this.btnFiltrele.Size = new System.Drawing.Size(128, 39);
             this.btnFiltrele.TabIndex = 7;
             this.btnFiltrele.Text = "🎐 FİLTRELE";
             this.btnFiltrele.UseVisualStyleBackColor = true;
             // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(35, 29);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(66, 16);
-            this.label62.TabIndex = 5;
-            this.label62.Text = "Filtre Tipi:";
-            // 
-            // cmbFiltreTipi
-            // 
-            this.cmbFiltreTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFiltreTipi.FormattingEnabled = true;
-            this.cmbFiltreTipi.Items.AddRange(new object[] {
-            "Zamana Göre",
-            "Müşteriye Göre"});
-            this.cmbFiltreTipi.Location = new System.Drawing.Point(103, 25);
-            this.cmbFiltreTipi.Name = "cmbFiltreTipi";
-            this.cmbFiltreTipi.Size = new System.Drawing.Size(128, 23);
-            this.cmbFiltreTipi.TabIndex = 6;
-            // 
             // txtSoyad
             // 
-            this.txtSoyad.Enabled = false;
-            this.txtSoyad.Location = new System.Drawing.Point(103, 215);
+            this.txtSoyad.Location = new System.Drawing.Point(103, 180);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(128, 21);
             this.txtSoyad.TabIndex = 4;
@@ -1949,24 +1879,16 @@ namespace kargo_takip
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(49, 218);
+            this.label59.Location = new System.Drawing.Point(48, 183);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(51, 16);
             this.label59.TabIndex = 3;
             this.label59.Text = "Soyad:";
             // 
-            // txtMusteriNo
-            // 
-            this.txtMusteriNo.Enabled = false;
-            this.txtMusteriNo.Location = new System.Drawing.Point(103, 151);
-            this.txtMusteriNo.Name = "txtMusteriNo";
-            this.txtMusteriNo.Size = new System.Drawing.Size(128, 21);
-            this.txtMusteriNo.TabIndex = 4;
-            // 
             // label61
             // 
             this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(27, 155);
+            this.label61.Location = new System.Drawing.Point(25, 120);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(75, 16);
             this.label61.TabIndex = 3;
@@ -1975,7 +1897,7 @@ namespace kargo_takip
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(41, 123);
+            this.label60.Location = new System.Drawing.Point(44, 88);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(56, 16);
             this.label60.TabIndex = 3;
@@ -1983,8 +1905,7 @@ namespace kargo_takip
             // 
             // txtAd
             // 
-            this.txtAd.Enabled = false;
-            this.txtAd.Location = new System.Drawing.Point(103, 183);
+            this.txtAd.Location = new System.Drawing.Point(103, 148);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(128, 21);
             this.txtAd.TabIndex = 4;
@@ -1992,7 +1913,7 @@ namespace kargo_takip
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(68, 187);
+            this.label58.Location = new System.Drawing.Point(71, 152);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(31, 16);
             this.label58.TabIndex = 3;
@@ -2001,7 +1922,7 @@ namespace kargo_takip
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(30, 91);
+            this.label57.Location = new System.Drawing.Point(32, 56);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(69, 16);
             this.label57.TabIndex = 2;
@@ -2010,7 +1931,7 @@ namespace kargo_takip
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(40, 61);
+            this.label56.Location = new System.Drawing.Point(43, 26);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(58, 16);
             this.label56.TabIndex = 2;
@@ -2018,18 +1939,16 @@ namespace kargo_takip
             // 
             // dateSonTarih
             // 
-            this.dateSonTarih.Enabled = false;
             this.dateSonTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateSonTarih.Location = new System.Drawing.Point(103, 89);
+            this.dateSonTarih.Location = new System.Drawing.Point(103, 54);
             this.dateSonTarih.Name = "dateSonTarih";
             this.dateSonTarih.Size = new System.Drawing.Size(128, 21);
             this.dateSonTarih.TabIndex = 1;
             // 
             // dateIlkTarih
             // 
-            this.dateIlkTarih.Enabled = false;
             this.dateIlkTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateIlkTarih.Location = new System.Drawing.Point(103, 59);
+            this.dateIlkTarih.Location = new System.Drawing.Point(103, 24);
             this.dateIlkTarih.Name = "dateIlkTarih";
             this.dateIlkTarih.Size = new System.Drawing.Size(128, 21);
             this.dateIlkTarih.TabIndex = 1;
@@ -2109,9 +2028,23 @@ namespace kargo_takip
             this.cmbBasCalistir.Text = "Başlangıçta Çalıştır";
             this.cmbBasCalistir.UseVisualStyleBackColor = true;
             // 
-            // hataMesaji
+            // errHataMesaji
             // 
-            this.hataMesaji.ContainerControl = this;
+            this.errHataMesaji.ContainerControl = this;
+            // 
+            // mtxtMusteriNo
+            // 
+            this.mtxtMusteriNo.Location = new System.Drawing.Point(103, 117);
+            this.mtxtMusteriNo.Mask = "00000000";
+            this.mtxtMusteriNo.Name = "mtxtMusteriNo";
+            this.mtxtMusteriNo.Size = new System.Drawing.Size(128, 21);
+            this.mtxtMusteriNo.TabIndex = 11;
+            this.mtxtMusteriNo.ValidatingType = typeof(int);
+            // 
+            // tmrZamanlama
+            // 
+            this.tmrZamanlama.Interval = 1000;
+            this.tmrZamanlama.Tick += new System.EventHandler(this.tmrZamanlama_Tick);
             // 
             // frmKargo
             // 
@@ -2169,7 +2102,7 @@ namespace kargo_takip
             this.groupBox19.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hataMesaji)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errHataMesaji)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2232,7 +2165,6 @@ namespace kargo_takip
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.TextBox txtMusteriNo;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox txtAd;
@@ -2241,8 +2173,6 @@ namespace kargo_takip
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.DateTimePicker dateSonTarih;
         private System.Windows.Forms.DateTimePicker dateIlkTarih;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.ComboBox cmbFiltreTipi;
         private System.Windows.Forms.GroupBox gboxIslemler;
         private System.Windows.Forms.Button btnKargoKaydet;
         private System.Windows.Forms.GroupBox gboxKargoImg;
@@ -2291,12 +2221,9 @@ namespace kargo_takip
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label lblOzetGGonAdet;
         private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label lblOzetGIndirim;
-        private System.Windows.Forms.Label label94;
         private System.Windows.Forms.Label lblOzetGMusteriNo;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.Label lblOzetAIndirim;
         private System.Windows.Forms.Label lblOzetAAlAdet;
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Label lblOzetAGonAdet;
@@ -2309,7 +2236,6 @@ namespace kargo_takip
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label lblOzetAAdi;
         private System.Windows.Forms.Label label97;
-        private System.Windows.Forms.Label label83;
         private System.Windows.Forms.DataGridView dataKargoListesi;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Label lblDurum;
@@ -2349,7 +2275,7 @@ namespace kargo_takip
         private System.Windows.Forms.CheckBox cmbYukleniyor;
         private System.Windows.Forms.CheckBox cmbIkonGoster;
         private System.Windows.Forms.CheckBox cmbBasCalistir;
-        private System.Windows.Forms.Label lblKalanSure;
+        private System.Windows.Forms.Label lblTahminiSure;
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.Label lblMesafe;
         private System.Windows.Forms.Label label120;
@@ -2357,8 +2283,10 @@ namespace kargo_takip
         private System.Windows.Forms.Button button1;
         private AxAcroPDFLib.AxAcroPDF pdfCiktiAl;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ErrorProvider hataMesaji;
+        private System.Windows.Forms.ErrorProvider errHataMesaji;
         private System.Windows.Forms.Button btnKargoTemizle;
         private System.Windows.Forms.Button btnKargoSil;
+        private System.Windows.Forms.MaskedTextBox mtxtMusteriNo;
+        private System.Windows.Forms.Timer tmrZamanlama;
     }
 }

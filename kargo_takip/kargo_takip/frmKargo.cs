@@ -12,6 +12,10 @@ namespace kargo_takip
 {
     public partial class frmKargo : Form
     {
+        #region Global: Değişkenler
+        public int say_saniye = 0;
+        #endregion
+
         public frmKargo()
         {
             InitializeComponent();
@@ -19,7 +23,16 @@ namespace kargo_takip
 
         private void frmKargo_Load(object sender, EventArgs e)
         {
+            Global global = new Global
+            {
+                tmr = tmrZamanlama,
+                frm = this,
+                tCtrl = tabControl1
+            };
+            global.imgYukleniyor();
 
+            mtxtGTcNo.Text = "13276502826";
+            mtxtATcNo.Text = "20302268700";
         }
 
         #region A1: GroupBox'lar:
@@ -30,7 +43,7 @@ namespace kargo_takip
             Global global = new Global();
             global.sorgu = "SELECT * FROM musteriler WHERE durum = 1";
             global.tc_cek = mtxtGTcNo.Text;
-            global.tcKontrol(hataMesaji, mtxtGTcNo, true);
+            global.tcKontrol(errHataMesaji, mtxtGTcNo, true);
 
             if (global.tc_cek == global.db_tc)
             {
@@ -120,7 +133,7 @@ namespace kargo_takip
             Global global = new Global();
             global.sorgu = "SELECT * FROM musteriler WHERE durum = 1";
             global.tc_cek = mtxtATcNo.Text;
-            global.tcKontrol(hataMesaji, mtxtATcNo, true);
+            global.tcKontrol(errHataMesaji, mtxtATcNo, true);
 
             if (global.tc_cek == global.db_tc)
             {
@@ -210,16 +223,33 @@ namespace kargo_takip
         #region A2: Button'lar:
         private void btnKargoKaydet_Click(object sender, EventArgs e)
         {
+            Global global = new Global();
+            global.sorgu = "SELECT * FROM musteriler WHERE durum = 1";
+            global.err = errHataMesaji;
+            //global.bosMu(gboxGonderici);
+            //global.bosMu(gboxGondericiAdres);
+            //global.bosMu(gboxAlici);
+            //global.bosMu(gboxAliciAdres);
+            //global.bosMu(gboxOzet);
 
+            if (global.hata_var_mi == false)
+            {
+                MessageBox.Show("Tebrikler Hatanız Yok!!", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                global.txt = txtGMusteriNo;
+                global.dbBaglan(5);
+            }
         }
+
         private void btnKargoGuncelle_Click(object sender, EventArgs e)
         {
 
         }
+
         private void btnKargoSil_Click(object sender, EventArgs e)
         {
 
         }
+
         private void btnKargoTemizle_Click(object sender, EventArgs e)
         {
             Global global = new Global();
@@ -244,14 +274,22 @@ namespace kargo_takip
             else if (cmbKargoTipi.SelectedIndex == 1)
             {
                 koli.ShowDialog();
-                //lblKargoTasima.Text = koli.tasima_bedeli.ToString("0.##");
-                //lblKargoEkHiz.Text = koli.ek_hizmet.ToString("0.##");
-                //lblKargoToplam.Text = koli.toplam.ToString("0.##");
-                //lblKargoKdv.Text = koli.kdv.ToString("0.##");
-                //lblKargoGenelTop.Text = koli.genel_toplam.ToString("0.##");
+                lblKargoTasima.Text = koli.tasima_bedeli.ToString("0.##");
+                lblKargoEkHiz.Text = koli.ek_hizmet.ToString("0.##");
+                lblKargoToplam.Text = koli.toplam.ToString("0.##");
+                lblKargoKdv.Text = koli.kdv.ToString("0.##");
+                lblKargoGenelTop.Text = koli.genel_toplam.ToString("0.##");
             }
+        }
 
-            
+        private void tmrZamanlama_Tick(object sender, EventArgs e)
+        {
+            say_saniye++;
+            if (say_saniye % 2 == 0)
+            {
+                tabControl1.Visible = true;
+                tmrZamanlama.Stop();
+            }
         }
     }
 }
